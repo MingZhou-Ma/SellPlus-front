@@ -1,0 +1,28 @@
+<template name="tempRecommendList">
+    <view class="RecommendList">
+        <view class="ListItem" wx:for="{{activityList}}" wx:for-item="itemName" wx:key="id">
+            <navigator class="tourl" url="../../pages/help_detail/help_detail?activityid={{itemName.id}}">
+                <view class="stock">剩余{{itemName.stock}}份</view>
+                <image class="pic" mode="aspectFill" src="{{itemName.img}}"></image>
+                <view class="rightInfo">
+                    <view class="itemTitle">{{itemName.title}}</view>
+                    <view class="bottominfo">
+                        <view class="leftPrice">
+                            <text class="lowText">最低￥</text>
+                            <text class="lowPrice">{{itemName.lowprice}}</text>
+                            <text class="oldPrice">￥{{itemName.oldprice}}</text>
+                        </view>
+                        <view class="rightBtn">
+                            <view class="goDetail" wx:if="{{itemName.status==1&&itemName.stock>0}}">去助力</view>
+                            <view class="goDetail normal" wx:if="{{itemName.status==1&&itemName.stock==0}}">已无库存</view>
+                            <view class="goDetail normal" wx:if="{{itemName.status==0}}">即将开始</view>
+                            <view class="goDetail normal" wx:if="{{itemName.status==2}}">活动结束</view>
+                        </view>
+                        <view class="clear"></view>
+                    </view>
+                    <view class="clear"></view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+</template>

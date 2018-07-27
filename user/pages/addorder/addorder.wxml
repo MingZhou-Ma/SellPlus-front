@@ -1,0 +1,19 @@
+<view class="FormLayout">
+    <view class="form_con">
+        <input bindinput="bindUname" class="goodinput" placeholder="请输入联系人姓名" value="{{uname}}"></input>
+    </view>
+    <view class="form_con">
+        <input bindinput="bindTel" class="goodinput" placeholder="请输入联系人电话" value="{{tel}}"></input>
+    </view>
+</view>
+
+<view class="priceInfo">
+    <view class="priceItem">付款方式：<block>在线支付</block>
+    </view>
+    <view class="priceItem">原价：￥{{activityInfo.oldprice}}</view>
+    <view class="priceItem" wx:if="{{activityType==0}}">助力价：￥{{activityInfo.helpprice}}</view>
+    <view class="priceItem" wx:if="{{activityType==1}}">拼团价：￥{{activityInfo.groupprice}}</view>
+</view>
+<form bindsubmit="addOrderBtn" reportSubmit="true">
+    <button class="green_btn" formType="submit" plain="true" size="default" type="default">提交</button>
+</form>

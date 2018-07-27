@@ -1,0 +1,45 @@
+<template name="tempCommonList">
+    <view class="CommonList">
+        <view class="ListItem" wx:for="{{activityList}}" wx:for-item="itemName">
+            <navigator class="tourl" url="../../pages/detail/detail?activityid={{itemName.id}}">
+                <view class="stock">剩余{{itemName.stock}}份</view>
+                <image class="pic" mode="aspectFill" src="{{itemName.pic}}"></image>
+                <view class="itemTitle">{{itemName.title}}</view>
+                <view class="bargainUser" wx:if="{{itemName.avatar&&itemName.avatar!=''}}">
+                    <view class="userItem" wx:for="{{itemName.avatar}}" wx:for-item="itemAvatar">
+                        <image class="userAvatar" mode="aspectFill" src="{{itemAvatar}}"></image>
+                    </view>
+                    <view class="userItem">
+                        <image class="userAvatar" src="../../resource/images/moreuser.png"></image>
+                    </view>
+                    <text class="bargainNum">{{itemName.bargainnum}}人正在参加</text>
+                    <view class="clear"></view>
+                </view>
+            </navigator>
+            <view class="bottominfo">
+                <view class="leftPrice">
+                    <text class="lowText">最低￥</text>
+                    <text class="lowPrice">{{itemName.lowprice}}</text>
+                    <text class="oldPrice">原价￥{{itemName.oldprice}}</text>
+                </view>
+                <view class="rightBtn">
+                    <navigator url="../../pages/detail/detail?activityid={{itemName.id}}" wx:if="{{itemName.status==1&&itemName.stock>0}}">
+                        <view class="goDetail">去砍价</view>
+                    </navigator>
+                    <view class="goDetail normal" wx:if="{{itemName.status==1&&itemName.stock==0}}">已无库存</view>
+                    <block wx:if="{{itemName.status==0}}">
+                        <view class="goDetail normal" wx:if="{{itemName.remind==0}}">即将开始</view>
+                        <form bindsubmit="setRemind" reportSubmit="true" wx:if="{{itemName.remind==1}}">
+                            <input hidden="{{true}}" name="aid" value="{{itemName.id}}"></input>
+                            <input hidden="{{true}}" name="idx" value="{{index}}"></input>
+                            <button class="goDetail remind" formType="submit" type="default">提醒我</button>
+                        </form>
+                        <view class="goDetail reminded" wx:if="{{itemName.remind==2}}">已设置提醒</view>
+                    </block>
+                    <view class="goDetail normal" wx:if="{{itemName.status==2}}">活动结束</view>
+                </view>
+                <view class="clear"></view>
+            </view>
+        </view>
+    </view>
+</template>

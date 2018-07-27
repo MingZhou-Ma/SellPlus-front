@@ -1,0 +1,107 @@
+<import src="../../templates/nomore.wxml"></import>
+
+<view class="regionSelect">
+    <view class="regionItem">
+        <picker bindchange="bindTypeChange" range="{{typeList}}" rangeKey="name" value="{{typeIndex}}">
+            <view class="picker">
+                <text class="pickerText">{{typeList[typeIndex].name}}</text>
+                <image class="arrow" src="../../resource/images/arrow.png"></image>
+            </view>
+        </picker>
+    </view>
+    <view class="clear"></view>
+</view>
+
+<view class="groupList" wx:if="{{actid==1}}">
+    <view class="groupItem" wx:for="{{groupList}}" wx:for-item="itemName">
+        <navigator url="../mygroup_detail/mygroup_detail?gid={{itemName.id}}">
+            <view class="groupActivity">
+                <image class="groupPic" mode="aspectFill" src="{{itemName.activity.img}}"></image>
+                <view class="groupTitle">{{itemName.activity.title}}</view>
+                <view class="clear"></view>
+            </view>
+            <view class="groupInfo">
+                <view class="infoItem">
+                    <view class="infoNum">
+                        <text class="yuan"></text>{{itemName.activity.oldprice}}</view>
+                    <view class="infoText">原价</view>
+                </view>
+                <view class="infoItem">
+                    <view class="infoNum">
+                        <text class="yuan"></text>{{itemName.activity.groupprice}}</view>
+                    <view class="infoText">拼团价</view>
+                </view>
+                <view class="infoItem">
+                    <view class="infoNum">
+                        <text class="yuan"></text>{{itemName.groupnum}}人</view>
+                    <view class="infoText">拼团人数</view>
+                </view>
+                <view class="infoItem">
+                    <view class="infoNum">
+                        <text class="yuan"></text>{{itemName.groupnum}}人</view>
+                    <view class="infoText">已拼</view>
+                </view>                 
+                <view class="clear"></view>
+            </view>
+            <view class="groupStatus">
+活动状态：
+                <text class="statusText" wx:if="{{itemName.status==0}}">拼团失败</text>
+                <text class="statusText" wx:if="{{itemName.status==1}}">正在拼团</text>
+                <text class="statusText" wx:if="{{itemName.status==2}}">拼团成功</text>
+            </view>
+            <view class="clear"></view>
+        </navigator>
+    </view>
+</view>
+
+
+
+<import src="../../templates/nomore.wxml"></import>
+<view class="bargainList" wx:if="{{actid==0}}">
+    <view class="bargainItem" wx:for="{{helpList}}" wx:for-item="itemName">
+        <navigator url="../my_help/my_help?helpid={{itemName.id}}">
+            <view class="bargainActivity">
+                <image class="bargainPic" mode="aspectFill" src="{{itemName.activity.img}}"></image>
+                <view class="bargainTitle">{{itemName.activity.title}}</view>
+                <view class="clear"></view>
+            </view>
+            <view class="bargainInfo">
+                <view class="infoItem">
+                    <view class="infoNum">
+                        <text class="yuan"></text>{{itemName.activity.oldprice}}</view>
+                    <view class="infoText">原价</view>
+                </view>
+                <view class="infoItem">
+                    <view class="infoNum">
+                        <text class="yuan"></text>{{itemName.activity.helpprice}}</view>
+                    <view class="infoText">助力价</view>
+                </view>
+                <view class="infoItem">
+                    <view class="infoNum">
+                        <text class="yuan"></text>{{itemName.activity.helpnum}}人</view>
+                    <view class="infoText">需助力</view>
+                </view>
+                <view class="infoItem">
+                    <view class="infoNum">{{itemName.helpnum}}人</view>
+                    <view class="infoText">已助力</view>
+                </view>
+                <view class="clear"></view>
+            </view>
+            <view class="bargainStatus">
+活动状态：
+<text class="statusText" wx:if="{{itemName.status==0}}">活动未开始</text>
+                <text class="statusText" wx:if="{{itemName.status==1&&itemName.activity.stock!=0}}">活动进行中</text>
+                <text class="statusText" wx:if="{{itemName.status==2}}">活动已结束</text>
+                <text class="statusText" wx:if="{{itemName.status==1&&itemName.activity.stock==0}}">活动结束，已无更多库存</text>
+                <text class="statusText" wx:if="{{itemName.status==3}}">订单已创建，等待支付</text>
+                <text class="statusText" wx:if="{{itemName.status==4}}">等待发货</text>
+                <text class="statusText" wx:if="{{itemName.status==5&&itemName.activity.type==0}}">订单已发货</text>
+                <text class="statusText" wx:if="{{itemName.status==5&&itemName.activity.type==1}}">等待到店</text>
+                <text class="statusText" wx:if="{{itemName.status==6&&itemName.activity.type==0}}">订单已完成</text>
+                <text class="statusText" wx:if="{{itemName.status==6&&itemName.activity.type==1}}">订单已核销</text>
+            </view>
+            <view class="clear"></view>
+        </navigator>
+    </view>
+</view>
+<template is="tempNoMore" data="{{noMoreHidden:noMoreHidden}}"></template>

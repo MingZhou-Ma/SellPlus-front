@@ -1,0 +1,15 @@
+<!--user/pages/my/my.wxml-->
+<view class="MenuList">
+    <view class="MenuItem">
+        <navigator class="MenuUrl" url="../../pages/my_list/my_list?actid=0">
+            <image class="MenuIcon" src="../../resource/images/default_kanjia_icon.png"></image>
+            <view class="MenuText">好友助力活动</view>
+        </navigator>
+    </view>
+    <view class="MenuItem">
+        <navigator class="MenuUrl" url="../../pages/my_list/my_list?actid=1">
+            <image class="MenuIcon" src="../../resource/images/default_groupbuy_icon.png"></image>
+            <view class="MenuText">拼团活动</view>
+        </navigator>
+    </view>
+</view>

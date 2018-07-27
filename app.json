@@ -1,0 +1,47 @@
+{
+  "pages": [
+    "user/pages/orderdetail/orderdetail",
+    "user/pages/addorder/addorder",
+    "user/pages/main/index",
+    "user/pages/logs/logs",
+    "business/pages/index/index",
+    "user/pages/groupbuy_detail/groupbuy_detail",
+    "user/pages/my/my",    
+    "user/pages/my_list/my_list",
+    "user/pages/my_help/my_help",
+    "user/pages/mygroup_detail/mygroup_detail",
+    "user/pages/help_detail/help_detail"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "微活动Plus",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#8a8a8a",
+    "selectedColor": "#ef6769",
+    "borderStyle": "white",
+    "backgroundColor": "#f8f9fb",
+    "list": [
+      {
+        "pagePath": "user/pages/main/index",
+        "text": "主页",
+        "iconPath": "user/resource/images/home.png",
+        "selectedIconPath": "user/resource/images/home_s.png"
+      },
+      {
+        "pagePath": "user/pages/my/my",
+        "text": "我的活动",
+        "iconPath": "user/resource/images/act1.png",
+        "selectedIconPath": "user/resource/images/act.png"
+      },
+      {
+        "pagePath": "business/pages/index/index",
+        "text": "我是商家",
+        "iconPath": "user/resource/images/my.png",
+        "selectedIconPath": "user/resource/images/my_s.png"
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+<template name="tempGroupbuyList">
+    <view class="GroupbuyList">
+        <view class="GroupbuyItem" wx:for="{{activityList}}" wx:for-item="itemName">
+            <navigator class="tourl" url="../../pages/groupbuy_detail/groupbuy_detail?activityid={{itemName.id}}">
+                <image class="pic" mode="aspectFill" src="{{itemName.img}}"></image>
+                <view class="rightInfo">
+                    <view class="groupTitle">{{itemName.title}}</view>
+                    <view class="buyPrice">原价<text class="delLine">￥{{itemName.oldprice}}</text>
+                    </view>
+                    <view class="bottomInfo">
+                        <text class="groupLimit">{{itemName.group_success_limit}}人团</text>
+                        <text class="groupPrice">
+                            <text class="YuanIcon">￥</text>{{itemName.groupprice}}</text>
+                      <view class="rightBtn">
+                            <view class="goDetail normal" wx:if="{{itemName.status==1&&itemName.stock==0}}">已无库存</view>
+                            <block wx:if="{{itemName.status==0}}">
+                                <view class="goDetail normal">即将开始</view>
+                            </block>
+                            <view class="goDetail normal" wx:if="{{itemName.status==2}}">活动结束</view>
+                            </view>
+                    </view>
+                    <view class="clear"></view>
+                </view>
+                <view class="clear"></view>
+            </navigator>
+        </view>
+    </view>
+</template>
