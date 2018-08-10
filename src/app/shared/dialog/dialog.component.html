@@ -1,0 +1,24 @@
+<div  class="dialog-background"  [class.hidden]="model?.hidden" [class.show]="!model?.hidden"></div>
+<div id="dialog-container" (click)="clickOutSide($event.target)" [class.hidden]="model?.hidden" [class.show]="!model?.hidden">
+    <div class="modal-dialog modal-dialog-centered"  role="document" #modelDialog>
+            <div class="modal-content" #dialog>
+                <div class="modal-header">
+                    <h5 class="modal-title" *ngIf="model.title">{{model.title}}</h5>
+                    <button type="button" class="close" (click)="close()">
+                        <span>&times;</span>
+                    </button>
+                </div>
+                <div [class.modal-body]="isSimpleText" #container>
+                    <p *ngIf="isSimpleText">{{model.content}}</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" *ngIf="!model?.closeButton?.hidden" class="btn btn-secondary" (click)="close()">
+                        {{model?.closeButton?.name?model?.closeButton?.name:'取消'}}
+                    </button>
+                    <button type="button" *ngIf="!model?.confirmButton?.hidden" class="btn btn-primary" (click)="confirm()">
+                        {{model?.confirmButton?.name?model?.confirmButton?.name:'确定'}}
+                    </button>
+                </div>
+            </div>
+        </div>
+</div>

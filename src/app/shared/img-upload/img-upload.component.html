@@ -1,0 +1,21 @@
+
+<br>
+<div class="c-content-inner" >
+<div class="mt-2 ml-2" >
+  <label type="button" class="btn btn-outline-primary" for="xFileDialog">选择图片</label>
+  <label type="button" class="btn btn-primary" (click)="clickUpload()">确认</label>
+
+  <input id="xFileDialog" type="file" (change)="onFileChange($event)" accept=".png, .jpg, .jpeg" style="display:none" />
+  <p class="imgissue mt-2">{{ imgIssue }}</p>
+</div>
+
+<div class="mt-2 ml-2" >
+  <img-cropper #cropper [image]="data" [settings]="cropperSettings" *ngIf="status==0"></img-cropper>
+  <span class="result rounded ml-4" *ngIf="data.image&&status==1">
+    <img [src]="data.image" style="text-align: left" class="img-result" [width]="cropperSettings.croppedWidth" [height]="cropperSettings.croppedHeight">
+  </span>
+</div>
+</div>
+<br>
+<br>
+
