@@ -1,1 +1,608 @@
-/* user/index/index.wxss */
+.swiper {
+    height: 266rpx;
+}
+
+.top-bar {
+    height: 100rpx;
+    background: #fff;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 3px 10px rgba(0,0,0,.06);
+    margin-bottom: 10px;
+}
+
+.top-bar-item {
+    display: inline-block;
+    background: #fff;
+    width: 31.3%;
+    color: #777;
+    text-align: center;
+    font-size: 14px;
+    line-height: 94rpx;
+    margin: 0 1%;
+}
+
+.top-bar-item-Selected {
+    border-bottom: 4px solid #ee4f4f;
+    color: #ee4f4f;
+    font-weight: bold;
+}
+
+.categoryList {
+    background: #fff;
+    width: 100%;
+}
+
+.categoryList .categoryItem {
+    padding: 20rpx 0;
+    float: left;
+    text-align: center;
+    width: 25%;
+}
+
+.categoryItem .categoryIcon {
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.categoryItem .categoryIcon.morecat {
+    width: 46rpx;
+    height: 46rpx;
+    padding: 10rpx;
+    border: 1px solid #919191;
+    border-radius: 20rpx;
+    margin: 7rpx;
+}
+
+.categoryItem .categoryName {
+    font-size: 14px;
+}
+
+.SwiperKefuLayout {
+    position: relative;
+    height: 266rpx;
+}
+
+.SwiperKefu {
+    width: 100%;
+    height: 266rpx;
+    margin: 0;
+    padding: 0;
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.SwiperKefu::after {
+    border: 0;
+}
+
+.NoticeList {
+    padding: 30rpx 50rpx 30rpx 30rpx;
+    background: #fff;
+}
+
+.noticeswiper {
+    height: 40rpx;
+    width: 500rpx;
+    display: inline-block;
+    line-height: 36rpx;
+}
+
+.noticetitle {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    font-size: 28rpx;
+    float: left;
+    width: 500rpx;
+    height: 36rpx;
+    color: #585858;
+}
+
+.noticetime {
+    font-size: 28rpx;
+    float: right;
+    color: #787878;
+}
+
+.noticeico {
+    width: 46rpx;
+    height: 46rpx;
+    margin-right: 20rpx;
+    display: inline-block;
+}
+
+.noticeMorenav {
+    width: 72rpx;
+    height: 28rpx;
+    float: right;
+    margin-top: 8rpx;
+}
+
+.noticeMore {
+    width: 72rpx;
+    height: 28rpx;
+    border: 1px solid #787878;
+    font-size: 11px;
+    text-align: center;
+    line-height: 28rpx;
+    border-radius: 6rpx;
+}
+
+
+
+@import "../../resource/wxParse/wxParse.wxss";
+
+.SwiperLayout {
+    position: relative;
+}
+
+.swiper {
+    height: 200px;
+}
+
+.activityInfo {
+    background: #fff;
+    padding: 20rpx 0 40rpx 30rpx;
+}
+
+.activityInfo .activityTitle {
+    font-size: 15px;
+    width: 530rpx;
+    display: inline-block;
+    vertical-align: middle;
+    border-right: 1px solid #eee;
+    padding-right: 30rpx;
+}
+
+.goodContent {
+    background: #fff;
+    padding: 20rpx 40rpx;
+    margin-bottom: 20rpx;
+}
+
+.goodContent .ContentTitle {
+    margin-top: 10rpx;
+    font-weight: 500;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20rpx;
+}
+
+.goodContent .goodFreight {
+}
+
+.goodContent .goodDesc {
+    font-size: 14px;
+    margin: 20rpx 0;
+}
+
+.topStock {
+    position: absolute;
+    z-index: 999;
+    right: 20rpx;
+    color: #fff;
+    top: 20rpx;
+    font-size: 14px;
+    height: 64rpx;
+}
+
+.topStockBg {
+    background: #000;
+    opacity: 0.5;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 64rpx;
+    position: absolute;
+}
+
+.topStockText {
+    padding: 10rpx 20rpx;
+}
+
+.bargainData {
+    background: #fff;
+    margin-bottom: 20rpx;
+}
+
+.bargainUser {
+    padding-top: 30rpx;
+}
+
+.dataLayout {
+    border-bottom: 1px dashed #eee;
+}
+
+.dataLayout .dataItem {
+    float: left;
+    width: 33%;
+    text-align: center;
+    padding: 20rpx 0;
+    font-size: 14px;
+}
+
+.dataItem:nth-child(2) {
+    border-left: 1px dashed #eee;
+    border-right: 1px dashed #eee;
+}
+
+.dataItem .dataNum {
+    font-size: 16px;
+    color: #ee4f4f;
+}
+
+.businessInfo {
+    background: #fff;
+    padding: 30rpx;
+    font-size: 14px;
+    margin-bottom: 20rpx;
+}
+
+.businessTitle {
+    border-bottom: 1px solid #eee;
+    font-weight: 500;
+    font-size: 14px;
+    padding-bottom: 20rpx;
+}
+
+.businessLeft {
+    padding-top: 20rpx;
+    float: center;
+    /* width: 520rpx; */
+    overflow: hidden;
+}
+
+.businessAdr {
+    color: #787878;
+    font-size: 13px;
+    margin-top: 6rpx;
+}
+
+.businessRight {
+    float: right;
+    margin: 0rpx 0 0;
+    border-left: 1px solid #eee;
+    padding: 10rpx 40rpx 0;
+}
+
+.businessTel {
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.RecommendLayout {
+    background: #fff;
+    margin-bottom: 94rpx;
+    padding-bottom: 100rpx;
+}
+
+.RecommendTitle {
+    font-size: 14px;
+    border-left: 4px solid #ee4f4f;
+    margin: 40rpx 20rpx 20rpx 20rpx;
+    padding-left: 20rpx;
+}
+
+.checkCity {
+    background: #ffefef;
+    color: #ee4f4f;
+    font-size: 12px;
+    padding: 20rpx;
+}
+
+.PriceBar {
+    background: #ee4f4f;
+    color: #fff;
+    font-size: 12px;
+}
+
+.LeftPrice {
+    float: left;
+    padding: 8rpx 30rpx;
+}
+
+.LowPrice {
+    font-size: 18px;
+    height: 46rpx;
+}
+
+.OldPrice {
+    text-decoration: line-through;
+}
+
+.YuanIcon {
+    font-size: 12px;
+}
+
+.RightTime {
+    float: right;
+    background: #f56a6a;
+    padding: 12rpx 20rpx;
+    text-align: center;
+}
+
+.TimeBox {
+    display: inline-block;
+    background: #fff;
+    color: #ee4f4f;
+    margin: 0 6rpx;
+    padding: 0 10rpx;
+    border-radius: 6rpx;
+    vertical-align: middle;
+}
+
+.OpbuyPrice {
+    float: left;
+    margin: 12rpx 0;
+    border-left: 1px dashed #fff;
+    padding: 0 26rpx;
+    max-width: 160rpx;
+}
+
+.OpbuyIcon {
+    background: #fff;
+    color: #ee4f4f;
+    text-align: center;
+    font-size: 11px;
+    width: 80rpx;
+    margin: 0 auto;
+    height: 30rpx;
+}
+
+.OpbuyPriceText {
+    font-size: 18px;
+    height: 46rpx;
+}
+
+.RightStock {
+    width: 130rpx;
+    display: inline-block;
+    padding: 0 10rpx;
+    font-size: 12px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.StockNum {
+    font-size: 18px;
+    display: block;
+}
+
+.actionBar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 0 2px rgba(0,0,0,0.1);
+    z-index: 100;
+    font-size: 16px;
+}
+
+.actionBar .commentText {
+    float: left;
+    margin-left: 10rpx;
+    color: #777;
+}
+
+.actionBar .addFav {
+    float: left;
+    margin: 40rpx 0 30rpx;
+    margin-left: 40rpx;
+    font-size: 14px;
+}
+
+.actionBar .addFav.long {
+    margin-left: 70rpx;
+}
+
+.actionBar .favIcon {
+    float: left;
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.actionBar .favText {
+    float: left;
+    margin-left: 10rpx;
+    color: #777;
+}
+
+.actionBar .shareGood {
+    float: left;
+    margin: 40rpx 0 30rpx;
+    margin-left: 40rpx;
+}
+
+.actionBar .shareGood.long {
+    margin-left: 70rpx;
+}
+
+.actionBar .shareBtn,.actionBar .shareBtn::after {
+    position: relative;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    border-radius: none;
+    -webkit-tap-highlight-color: transparent;
+    background-color: transparent;
+    border: none!important;
+    color: #333;
+}
+
+.actionBar .shareIcon {
+    float: left;
+    width: 40rpx;
+    height: 40rpx;
+}
+
+.actionBar .shareText {
+    float: left;
+    margin-left: 10rpx;
+    margin-top: 8rpx;
+    color: #777;
+    font-size: 14px;
+}
+
+.actionBar .addbargain,.actionBar .addoporder {
+    float: right;
+    width: 280rpx;
+    border: 0;
+    background: #ee4f4f;
+    color: #fff;
+    height: 114rpx;
+    line-height: 124rpx;
+    text-align: center;
+    font-size: 16px;
+    border-radius: 0;
+}
+
+.actionBar .bar_normal {
+    background: #ddd;
+}
+
+.actionBar .bar_remind {
+    padding: 0 52rpx;
+    font-size: 14px;
+    background: #3bd6a1;
+}
+
+.actionBar .bar_remind::after {
+    border: 0;
+}
+
+.actionBar .bar_reminded {
+    background: #3bd6a1;
+}
+
+.actionBar .twobtn {
+    width: 200rpx;
+    border-radius: 0;
+    font-size: 14px;
+}
+
+.actionBar .addoporder {
+    background: #fe8535;
+    font-size: 16px;
+}
+
+.actionBar .addoporder::after,.actionBar .addbargain::after {
+    border: 0;
+}
+
+.infoList {
+    background: #fff;
+    margin-bottom: 20rpx;
+}
+
+.infoItem {
+    padding: 30rpx 0;
+    font-size: 13px;
+    border-top: 1px solid #eee;
+    margin: 0 20rpx;
+}
+
+.infoItem .infoTitle {
+    float: left;
+    color: #585858;
+}
+
+.infoItem .infoText {
+    float: right;
+    color: #ee4f4f;
+}
+
+.infoItem .infoTips {
+    float: left;
+    color: #585858;
+}
+
+.infoItem .infoIcon {
+    width: 40rpx;
+    height: 40rpx;
+    float: left;
+    margin-right: 10rpx;
+}
+
+.applyBar {
+    padding: 30rpx 0;
+    font-size: 13px;
+    background: #fff;
+    margin-bottom: 20rpx;
+    text-align: center;
+    color: #ee4f4f;
+}
+
+.applyIco {
+    width: 50rpx;
+    height: 50rpx;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 12rpx;
+}
+
+.applyText {
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.RecommendLayout {
+    background: #fff;
+    margin-bottom: 94rpx;
+    padding-bottom: 100rpx;
+}
+
+.RecommendTitle {
+    font-size: 14px;
+    border-left: 4px solid #ee4f4f;
+    margin: 40rpx 20rpx 20rpx 20rpx;
+    padding-left: 20rpx;
+}
+
+
+.RecommendList .ListItem {
+    background: #fff;
+    position: relative;
+    padding: 20rpx;
+    border-bottom: 1px dashed #eee;
+}
+
+.RecommendList .ListItem:last-child {
+    border-bottom: 0;
+}
+
+.businessInfo .salerInfo .pic {
+    width: 200rpx;
+    height: 200rpx;
+    float: left;
+}
+
+.businessInfo .salerInfo .itemTitle {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-size: 32rpx;
+    line-height: 46rpx;
+    padding: 10rpx 30rpx;
+}
+
+.businessInfo .salerInfo .itemName {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    font-size: 36rpx;
+    line-height: 46rpx;
+    padding: 10rpx 30rpx;
+    color: #e48e0d;
+}

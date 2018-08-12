@@ -1,4 +1,5 @@
-var t = getApp();
+var t = getApp()
+var util = require('../../../utils/util.js')
 
 // user/index/index.js
 Page({
@@ -7,6 +8,36 @@ Page({
    * 页面的初始数据
    */
   data: {
+    swiperList:[
+      {
+        "swiper_pageid":3,
+        "swiper_image":"http://img1.3lian.com/2015/w7/85/d/101.jpg",
+      },
+      {
+        "swiper_pageid":3,
+        "swiper_image":"http://img1.3lian.com/2015/w7/85/d/101.jpg",
+      },
+      {
+        "swiper_pageid":3,
+        "swiper_image":"http://img1.3lian.com/2015/w7/85/d/101.jpg",
+      }
+    ],
+    noticeList:[
+      {
+        "title":"这是一个很无聊的通知0"
+      },
+      {
+        "title":"这是一个很无聊的通知1"
+      }
+    ],
+    salerInfo:
+      {
+        "img":"http://img1.3lian.com/2015/w7/85/d/101.jpg",
+        "name":"马化腾",
+        "wxNum":"173348857",
+        "phoneNum":"13719811949",
+        "intro":"971年10月29日生于广东省汕头市潮南区。腾讯公司主要创办人之一。现任腾讯公司控股董事会主席兼首席执行官；全国青联副主席。"
+      }
   
   },
 
@@ -56,10 +87,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    var t = this, a = t.data.page, e = t.data.tab;
-    0 == t.data.functiondata.openpanicbuy && 0 == t.data.functiondata.opengroupbuy && (t.setData({
-      page: a + 1
-    }), t.GetList(e));
+
   },
 
   /**

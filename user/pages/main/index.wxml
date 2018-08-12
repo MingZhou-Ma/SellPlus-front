@@ -1,1 +1,53 @@
 <!--user/index/index.wxml-->
+<import src="../../templates/common-list.wxml"></import>
+<import src="../../templates/nomore.wxml"></import>
+
+<view class="SwiperLayout" wx:if="{{swiperList&&swiperList!=''}}">
+    <swiper autoplay="true" class="swiper" indicatorDots="true" interval="5000">
+        <block wx:for="{{swiperList}}" wx:key="id">
+            <navigator url="{{item.swiper_pageid}}">
+                <swiper-item>
+                    <image mode="aspectFill" src="{{item.swiper_image}}" style="width:100%;height:100%;"></image>
+                    <!-- 要设定图片格式，style="width:100%;height:266rpx;" -->
+                </swiper-item>
+            </navigator>
+        </block>
+    </swiper>
+</view>
+<!-- 通知栏 -->
+<view class="NoticeList" wx:if="{{noticeList&&noticeList!=''}}">
+    <image class="noticeico" src="../../resource/images/notice.png"></image>
+    <swiper vertical autoplay="true" class="noticeswiper" interval="3000">
+        <navigator url="../../pages/notice/notice?noticeid={{item.id}}" wx:for="{{noticeList}}" wx:key="id">
+            <swiper-item>
+                <view class="noticetitle">{{item.title}}</view>
+                <view class="clear"></view>
+            </swiper-item>
+        </navigator>
+    </swiper>
+    <navigator class="noticeMorenav" url="../../pages/noticelist/noticelist">
+        <view class="noticeMore">MORE</view>
+    </navigator>
+    <view class="clear"></view>
+</view>
+
+<view class="businessInfo">
+    <view class="businessTitle">专业销售人员</view>
+    <view class="salerInfo">
+        <image class="pic" mode="aspectFill" src="{{salerInfo.img}}"></image>
+        <view class="itemName">{{salerInfo.name}}</view>
+        <view bindtap="copyTBL" class="businessRight">
+                <image class="businessTel" src="../../resource/images/edit.png"></image>
+            </view> 
+        <view class="itemTitle">微信：{{salerInfo.wxNum}}</view>
+        <view bindtap="CallBusiness" class="businessRight">
+            <image class="businessTel" src="../../resource/images/tel.png"></image>
+        </view>
+        <view class="itemTitle">手机：{{salerInfo.phoneNum}}</view>
+    </view>
+    <view bindtap="OpenBusiness" class="businessLeft">
+        <view class="businessAdr">{{salerInfo.intro}}</view>
+    </view>
+    <view class="clear"></view>
+</view>
+

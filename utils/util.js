@@ -16,7 +16,7 @@ function formatNumber(n) {
 }
 
 
-var rootDocment = 'http://test.com/api/';
+var rootDocment = 'http://192.168.1.110/api/';
 
 //修改成你的appid及appsecret
 var AppConf = { 'appid': 'wx0ad95240d57cb5ee', 'appsecret': '07618c31603772e3836d003d2262c87c' };

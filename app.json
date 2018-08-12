@@ -1,8 +1,8 @@
 {
   "pages": [
+    "user/pages/main/index",
     "user/pages/orderdetail/orderdetail",
     "user/pages/addorder/addorder",
-    "user/pages/main/index",
     "user/pages/logs/logs",
     "business/pages/index/index",
     "user/pages/groupbuy_detail/groupbuy_detail",
@@ -32,13 +32,19 @@
       },
       {
         "pagePath": "user/pages/my/my",
-        "text": "我的活动",
-        "iconPath": "user/resource/images/act1.png",
-        "selectedIconPath": "user/resource/images/act.png"
+        "text": "产品&服务",
+        "iconPath": "user/resource/tabbar/gray/dialogue.png",
+        "selectedIconPath": "user/resource/tabbar/red/dialogue.png"
       },
       {
-        "pagePath": "business/pages/index/index",
-        "text": "我是商家",
+        "pagePath":"user/pages/my/my",
+        "text":"福利",
+        "iconPath":"user/resource/tabbar/gray/recommend_s.png",
+        "selectedIconPath":"user/resource/tabbar/red/recommend.png"
+      },
+      {
+        "pagePath": "user/pages/my/my",
+        "text": "我的",
         "iconPath": "user/resource/images/my.png",
         "selectedIconPath": "user/resource/images/my_s.png"
       }
