@@ -1,16 +1,18 @@
-{
-  "pages": [
+  {
+    "pages":[
     "user/pages/main/index",
-    "user/pages/orderdetail/orderdetail",
-    "user/pages/addorder/addorder",
+    "user/pages/salar_regis/salar_regis",
+    "user/pages/appointment/appointment",
+    "user/pages/my/my",    
+    "user/pages/help_detail/help_detail",
+    "user/pages/product_detail/product_detail",
+    "user/pages/pdORsv/pdORsv",
     "user/pages/logs/logs",
     "business/pages/index/index",
     "user/pages/groupbuy_detail/groupbuy_detail",
-    "user/pages/my/my",    
     "user/pages/my_list/my_list",
     "user/pages/my_help/my_help",
-    "user/pages/mygroup_detail/mygroup_detail",
-    "user/pages/help_detail/help_detail"
+    "user/pages/mygroup_detail/mygroup_detail"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -31,7 +33,7 @@
         "selectedIconPath": "user/resource/images/home_s.png"
       },
       {
-        "pagePath": "user/pages/my/my",
+        "pagePath":"user/pages/pdORsv/pdORsv",
         "text": "产品&服务",
         "iconPath": "user/resource/tabbar/gray/dialogue.png",
         "selectedIconPath": "user/resource/tabbar/red/dialogue.png"

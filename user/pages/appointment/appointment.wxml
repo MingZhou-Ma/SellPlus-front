@@ -1,0 +1,34 @@
+<view class="FormLayout">
+    <view class="form_con">
+        <label class="label">商品</label>
+            <view class="goodinput">
+      <!-- {{bargainInfo.activity.goodmodel[goodmodelIndex]}} -->
+    </view>
+    <view class="form_con">
+        
+        <label class="label">商品&服务数量</label>
+           <!-- 主容器 -->
+        <view class="stepper">
+            <!-- 减号 -->
+            <text class="{{minusStatus}}" bindtap="bindMinus">-</text>
+            <!-- 数值 -->
+            <input type="number" bindchange="bindManual" value="{{num}}" />
+            <!-- 加号 -->
+            <text class="normal" bindtap="bindPlus">+</text>
+        </view>
+    </view>
+    <view class="form_con">
+        <input bindinput="bindUname" class="goodinput" placeholder="请输入联系人姓名" value="{{uname}}"></input>
+    </view>
+    <view class="form_con">
+        <input bindinput="bindTel" class="goodinput" placeholder="请输入联系人电话" value="{{tel}}"></input>
+    </view>
+    <view class="form_con">
+        <input bindinput="bindTel" class="goodinput" placeholder="请输入备注" value="{{remark}}"></input>
+    </view>
+</view>
+</view>
+
+<form bindsubmit="addOrderBtn" reportSubmit="true">
+    <button class="green_btn" formType="submit" plain="true" size="default" type="default">提交</button>
+</form>

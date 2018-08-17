@@ -2,9 +2,10 @@ var t = getApp()
 var util = require('../../../utils/util.js')
 Page({
 data: {
-activityInfo:
+productInfo:
 {
-  // "title": "这是一个非常有趣的拼团活动",
+  "pic":"static/upload/237d1f33be615ab567cee937241bd35.jpg",
+  // "title": "这是一个非常有趣的商品",
   //   "img": [
   //     "http://img1.3lian.com/2015/w7/85/d/101.jpg",
   //     "http://img1.3lian.com/2015/w7/85/d/101.jpg",
@@ -44,12 +45,11 @@ activityInfo:
       "status": 0 / 1 / 2,
     }
   ],
-activityId: "",
-
-rootUrl:util.rootUrl,
-helpid:"",
+MerInfo:{},
+productId: "",
+currentTab: 0,
 mainColor: "#f94e5a",
-xiangqing: [ {
+xiangqing: [{
   id: "x0",
   open: !0,
   text: "商品详情"
@@ -57,9 +57,10 @@ xiangqing: [ {
   id: "x1",
   open: !1,
   text: "评论"
-} ],
+}],
 commentInfoList:[],
-MerInfo:{}
+rootUrl:util.rootUrl,
+
 },
 
 
@@ -67,11 +68,11 @@ MerInfo:{}
 onLoad: function(a) {
     var e = this
     e.setData({
-      activityId:a.activityid
+      productId:a.productid
     })
-    e.GetHelpActivityDetail(a.activityid)
     e.GetMerInfo()
-},
+    e.GetProductDetail(a.productid)  
+  },
 
 toHome: function() {
     wx.switchTab({
@@ -80,23 +81,10 @@ toHome: function() {
 },
 onShareAppMessage: function() {
     var t = this, a = "原价" + t.data.activityInfo.oldprice + "元的：" + t.data.activityInfo.title + " 好友助力后只需" + t.data.activityInfo.helpprice + "元，快来看看吧", e = t.data.activityInfo.img[0];
-    wx.getStorage({
-      key: 'uid',
-      success: function(res){
-        // success
-        uid=res.data
-      },
-      fail: function() {
-        // fail
-      },
-      complete: function() {
-        // complete
-      }
-    })
     return {
         title: a,
         imageUrl: e,
-        path: "user/pages/help_detail/help_detail?activityid=" + t.data.activityId+"&uid="+uid,
+        path: "user/pages/help_detail/help_detail?activityid=" + t.data.activityId,
         success: function(t) {
             wx.showToast({
                 title: "转发成功",
@@ -109,26 +97,23 @@ onShareAppMessage: function() {
 },
 
 
-
-
-
 CallBusiness: function() {
     var t = this;
     wx.makePhoneCall({
-        phoneNumber: t.data.activityInfo.business.tel
+        phoneNumber: t.data.MerInfo.phone
     });
 },
 
 
-GetHelpActivityDetail: function (s) {    //获取活动信息
+GetProductDetail: function (s) {    //获取活动信息
   var e = this;
   wx.getStorage({     
     key: 'accessToken',
     success: function (res) {
       let accessToken = res.data;
-      util.req('pub/activityInfo', { "token": accessToken,"activityid": s, }, function (data) { 
+      util.req('pub/productInfo', { "token":accessToken,"productid": s, }, function (data) { 
         e.setData({
-          activityInfo: data.data
+          productInfo: data.data
         })
         console.log(data)
       })
@@ -141,7 +126,7 @@ GetMerInfo:function(){
   wx.getStorage({     
     key: 'accessToken',
     success: function (res) {
-      let accessToken=res.data
+      let accessToken =res.data
       util.req('pub/getMerInfo', { "token": accessToken}, function (data) { 
         e.setData({
           MerInfo: data.data
@@ -152,46 +137,7 @@ GetMerInfo:function(){
   })
 },
 
-AddHelp: function() {
-    var e = this;
-    wx.getStorage({     //检查session_key
-      key: 'accessToken',
-      success: function (res) {
-        let accessToken = res.data
-        util.req('user/addHelp', { "token":accessToken,"activityid": e.data.activityId, }, function (data) {
-          e.setData({
-          })
-          console.log(data)
-          if(data.code==1000){
-            wx.showModal({
-              title: "提示",
-              content: "恭喜您已开启该商品的好友助力活动，是否跳转到详情页面",
-              success: function (a) {
-                a.confirm && wx.navigateTo({
-                  url: "../my_help/my_help?helpid=" + data.data.id
-                });
-              }
-            })
-            // wx.navigateTo({
-            //   url: "../help_detail/help_detail?activityid=" + e.data.activityId
-            // });
-          }
-          else{
-            wx.showModal({
-              title: "提示",
-              content: "当前活动您已经发起过好友助力，是否跳转到详情页面",
-              success: function (a) {
-                a.confirm && wx.navigateTo({
-                  url: "../my_help/my_help?helpid=" + data.data.id
-                });
-              }
-            })
-          }
-        })
-      },
-    })
 
-},
 
 widgetsToggle1: function(t) {
   for (var a = t.currentTarget.id, e = this.data.xiangqing, o = 0, n = e.length; o < n; ++o) e[o].id == a ? (e[o].open = !0, 

@@ -7,72 +7,73 @@ Page({
    * 页面的初始数据
    */
   data: {
-    "helpList": [
-      {
-        "helpnum": 3,
-        "status": 0 / 1 / 2 / 3 / 4 / 5 / 6,
-        "activity": {
-          "img": "http://img1.3lian.com/2015/w7/85/d/101.jpg",
-          "title": "ReFa CARAT RAY美容仪铂金滚轮微电流 范冰冰日本瘦脸神器升级版",
-          "oldprice": 199,
-          "helpprice": 99,
-          "helpnum": 6,
-        }
-      },
-      {
-        "helpnum": 3,
-        "status": 0 / 1 / 2 / 3 / 4 / 5 / 6,
-        "activity": {
-          "img": "http://img1.3lian.com/2015/w7/85/d/101.jpg",
-          "title": "ReFa CARAT RAY美容仪铂金滚轮微电流 范冰冰日本瘦脸神器升级版",
-          "oldprice": 199,
-          "helpprice": 99,
-          "helpnum": 6,
-        }
-      },
+    helpList: [
+      // {
+      //   "helpnum": 3,
+      //   "status": 0 / 1 / 2 / 3 / 4 / 5 / 6,
+      //   "activity": {
+      //     "img": "http://img1.3lian.com/2015/w7/85/d/101.jpg",
+      //     "title": "ReFa CARAT RAY美容仪铂金滚轮微电流 范冰冰日本瘦脸神器升级版",
+      //     "oldprice": 199,
+      //     "helpprice": 99,
+      //     "helpnum": 6,
+      //   }
+      // },
+      // {
+      //   "helpnum": 3,
+      //   "status": 0 / 1 / 2 / 3 / 4 / 5 / 6,
+      //   "activity": {
+      //     "img": "http://img1.3lian.com/2015/w7/85/d/101.jpg",
+      //     "title": "ReFa CARAT RAY美容仪铂金滚轮微电流 范冰冰日本瘦脸神器升级版",
+      //     "oldprice": 199,
+      //     "helpprice": 99,
+      //     "helpnum": 6,
+      //   }
+      // },
     ],
 
     groupList: [{
-      "id": 2,
-      "status": 1,
-      "groupnum": 3,
-	"activity":
-      {
-        "title": "ReFa CARAT RAY美容仪铂金滚轮微电流 范冰冰日本瘦脸神器升级版",
-        "img": "../../../text_img/Fruit.jpg",
-        "groupnum": 5,
-        "oldprice": "114",
-        "groupprice": "99",
-      }
-    },
-    {
-      "id": 3,
-      "status": 0,
-      "groupnum": 3,
-	"activity":
-      {
-        "title": "ReFa CARAT RAY美容仪铂金滚轮微电流 范冰冰日本瘦脸神器升级版",
-        "img": "http://img1.3lian.com/2015/w7/85/d/101.jpg",
-        "groupnum": 5,
-        "oldprice": "114",
-        "groupprice": "99",
-      }
-    },],
+  //     "id": 2,
+  //     "status": 1,
+  //     "groupnum": 3,
+	// "activity":
+  //     {
+  //       "title": "ReFa CARAT RAY美容仪铂金滚轮微电流 范冰冰日本瘦脸神器升级版",
+  //       "img": "../../../text_img/Fruit.jpg",
+  //       "groupnum": 5,
+  //       "oldprice": "114",
+  //       "groupprice": "99",
+  //     }
+  //   },
+  //   {
+  //     "id": 3,
+  //     "status": 0,
+  //     "groupnum": 3,
+	// "activity":
+  //     {
+  //       "title": "ReFa CARAT RAY美容仪铂金滚轮微电流 范冰冰日本瘦脸神器升级版",
+  //       "img": "http://img1.3lian.com/2015/w7/85/d/101.jpg",
+  //       "groupnum": 5,
+  //       "oldprice": "114",
+  //       "groupprice": "99",
+  //     }
+    }],
     activityList:[],
     typeList: [{
-      id: "wait",
+      id: "0",
       name: "待完成的活动"
     }, {
-      id: "allready",
+      id: "1",
       name: "已完成的活动"
     }, {
-      id: "fail",
+      id: "2",
       name: "已失败的活动"
     }],
     actid:1,
     typeIndex: 0,
     noMoreHidden: !0,
     page: 1,
+    rootUrl:util.rootUrl,
   },
 
   /**
@@ -82,61 +83,62 @@ Page({
 
 
   var e =this
-  console.log(options.actid),
     e.setData({
     actid:options.actid
   })
-      /*
-  if(e.data.actid){
-    e.GetGroupList(0)
+  console.log(e.data.actid)
+
+  if(options.actid==1){
+    e.GetGroupList(1)
+
   }
   else{
-    e.GetHelpList(0)
+    e.GetHelpList(1)
   }
-  */
+  
   },
 
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-    var t = this;
-    t.setData({
-      bargainList: [],
-      page: 1
-    }), t.GetList(), setTimeout(function () {
-      wx.stopPullDownRefresh();
-    }, 1e3);
-  },
+  // onPullDownRefresh: function () {
+  //   var t = this;
+  //   t.setData({
+  //     bargainList: [],
+  //     page: 1
+  //   }), t.GetList(), setTimeout(function () {
+  //     wx.stopPullDownRefresh();
+  //   }, 1e3);
+  // },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-    var t = this, e = t.data.page;
-    t.setData({
-      page: e + 1
-    }), t.GetList();
-  },
+  // onReachBottom: function () {
+  //   var t = this, e = t.data.page;
+  //   t.setData({
+  //     page: e + 1
+  //   }), t.GetList();
+  // },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-    return {
-      title: "抢购活动",
-      path: "ypuk_kjb/pages/groupbuy_list/groupbuy_list",
-      success: function (t) {
-        wx.showToast({
-          title: "转发成功",
-          icon: "success",
-          duration: 1e3,
-          mask: !0
-        });
-      }
-    };
-  },
+  // onShareAppMessage: function () {
+  //   return {
+  //     title: "抢购活动",
+  //     path: "ypuk_kjb/pages/groupbuy_list/groupbuy_list",
+  //     success: function (t) {
+  //       wx.showToast({
+  //         title: "转发成功",
+  //         icon: "success",
+  //         duration: 1e3,
+  //         mask: !0
+  //       });
+  //     }
+  //   };
+  // },
 
   bindTypeChange: function (t) {
     var e = this;
@@ -144,7 +146,8 @@ Page({
       typeIndex: t.detail.value,   //对应的值为0，1，2
       activityList: []              //清空活动列表
     })
-    if(e.data.actid){
+    console.log(e.data.actid)
+    if(e.data.actid==1){
       e.GetGroupList(t.detail.value)
       console.log(t.detail.value)
     }
@@ -175,14 +178,16 @@ Page({
   GetHelpList:function(s){
     var e = this
      wx.getStorage({     //检查session_key
-      key: 'userId',
+      key: 'accessToken',
       success: function (res) {
-        var userid = res.data;
-        util.req('user/GetHelpList', { "userid": userid, "help_status":s }, function (data) {  //获取对应用户参与活动的信息
-          a.setData({
-            helpList: data.helpList,
+        var accessToken = res.data;
+        util.req('user/getHelpList', { "token":accessToken, "status":s }, function (data) {  //获取对应用户参与活动的信息
+          e.setData({
+            helpList: data.data,
             noMoreHidden: !1,
           })
+          console.log(data)
+          console.log(data.data);
         })
       },
     })

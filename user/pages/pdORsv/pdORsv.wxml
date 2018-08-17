@@ -1,0 +1,64 @@
+<import src="../../templates/nomore.wxml"></import>
+
+<view class="marg-t16 tx-14 tx-999 tx-c lh-1 bg-fff bord-b1 bord-c flex1 flex-r">
+    <text catchtap="widgetsToggle1" class="box padd-a16 w50e {{item.open?'bord-b3':''}}" id="{{item.id}}" style="{{item.open?'color:'+mainColor+' !important;':''}}; {{item.open?'border-color:'+mainColor:''}};" wx:for="{{xiangqing}}">{{item.text}}</text>
+</view>
+
+<view class="ActivityLayout {{currentTab==0?'':'hide'}} "  >
+    <view class="ActivityList">
+        <view class="ActivityItem" wx:for="{{productList}}">
+            <navigator url="../../pages/product_detail/product_detail?productid={{item.id}}">
+                <image class="ActivityPic" mode="aspectFill" src="{{rootUrl+item.picList[0]}}"></image>
+                <view class="ActivityLeft">
+                    <view class="ActivityTitle">{{item.name}}</view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+</view>
+
+
+<view class="bargainList {{currentTab==1?'':'hide'}}">
+    <view class="bargainItem" wx:for="{{helpList}}" wx:for-item="itemName">
+        <navigator url="../../pages/help_detail/help_detail?activityid={{itemName.id}}">
+            <view class="bargainActivity">
+                <image class="bargainPic" mode="aspectFill" src="{{rootUrl+itemName.product.pic}}"></image>
+                <view class="bargainTitle">{{itemName.headline}}</view>
+                <view class="clear"></view>
+            </view>
+            <view class="bargainInfo">
+                <view class="infoItem">
+                    <view class="infoNum">
+                        <text class="yuan"></text>{{itemName.product.price}}</view>
+                    <view class="infoText">原价</view>
+                </view>
+                <view class="infoItem">
+                    <view class="infoNum">
+                        <text class="yuan"></text>{{itemName.groupPrice}}</view>
+                    <view class="infoText">助力价</view>
+                </view>
+                <view class="infoItem">
+                    <view class="infoNum">
+                        <text class="yuan"></text>{{itemName.helpNum}}人</view>
+                    <view class="infoText">需助力</view>
+                </view>
+                <view class="infoItem">
+                    <view class="infoNum">78个</view>
+                    <view class="infoText">已开团</view>
+                </view>
+                <view class="clear"></view>
+                
+            </view>
+            <view class="bargainStatus">
+活动状态：
+                <text class="statusText" >活动进行中</text>
+            </view>
+            <view class="bargainStatus">
+                结束时间：
+                <text class="statusText" >{{itemName.endDate}}</text>
+            </view>
+            <view class="clear"></view>
+        </navigator>
+    </view>
+</view>
+<template is="tempNoMore" data="{{noMoreHidden:noMoreHidden}}"></template>

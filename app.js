@@ -4,7 +4,8 @@ App({
 
   onLaunch: function () {
     var that = this;
-    //小程序初始化先判断用户是否登录    
+
+    //小程序初始化先判断用户是否登录 
     wx.checkSession({
       success: function (data) {
         console.log(data)
@@ -22,20 +23,23 @@ App({
     var that = this;
     wx.login({
       success: function (res) {
-        console.log(res)
         util.req('user/login', {
           "code": res.code,
           "errMsg":res.errMsg
         }, function (data) {        //获取请求返回的内容
-          that.setUserInfo(data.userid);  //存储用户的openid
-          that.setSk(data.sk);
+          // wx.setStorageSync("uid",data.data.uid)
+          // wx.setStorageSync("accessToken",data.data.accessToken)
+          that.setUid(data.data.uid);  //存储用户的openid
+          that.accessToken(data.data.accessToken);
           console.log(data)
         })
+   //判断cb是不是函数类型同时将一个参数传入名为cb的函数下
       },
       fail: function (res) {
         that.loginFail();
       }
     })
+    // return typeof cb == "function" && cb()  
   },
 
   loginFail: function () {
@@ -46,25 +50,32 @@ App({
     });
     that.login();
   },
-  setUserInfo: function (data) {   //将用户信息缓存保存
-    this.globalData.userInfo = data;
+  setUid: function (data) {   //将用户信息缓存保存
+    this.globalData.uid = data;
     wx.setStorage({
-      key: "userId",
+      key: "uid",
       data: data
     })
   },
 
-  setSk: function (data) {   //将用户信息缓存保存
+  accessToken: function (data) {   //将用户信息缓存保存
+    this.globalData.at=data
+    console.log("设置token成功")
     this.globalData.sk = data;
     wx.setStorage({
-      key: "sk",
+      key: "accessToken",
       data: data
     })
   },
 
-  globalData: {
-    userId: null,
-    sk:null
-  }
+  getUserInfo: function (cb) {
+    var that = this
+      return typeof cb == "function" && cb(this.globalData)
+    },
+globalData: {
+  uid: null,
+  at:null
+},
+
 
 })

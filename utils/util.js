@@ -1,3 +1,5 @@
+var t = getApp()
+
 function formatTime(date) {
   var year = date.getFullYear()
   var month = date.getMonth() + 1
@@ -15,11 +17,10 @@ function formatNumber(n) {
   return n[1] ? n : '0' + n
 }
 
-
-var rootDocment = 'http://192.168.1.110/api/';
+var rootUrl = "https://wx.meetwhy.com/"
+var rootDocment = rootUrl + 'api/';
 
 //修改成你的appid及appsecret
-var AppConf = { 'appid': 'wx0ad95240d57cb5ee', 'appsecret': '07618c31603772e3836d003d2262c87c' };
 
 function req(url, data, cb) {
   wx.request({
@@ -53,6 +54,65 @@ function getReq(url, data, cb) {
   })
 }
 
+//检查accessToken是否过期
+function checkAt(cb){
+      wx.getStorage({
+        key: 'accessToken',
+        success: function(res){
+          // success
+          req("cus/checkToken",{"token":res.data},function(data){
+            console.log(data)
+            if(data.code!=1000)
+            {
+              // wx.setStorage({
+              //   key: 'accessToken',
+              //   data: data.data.accessToken,
+              //   success: function(res){
+              //     // success
+              //   },
+              //   fail: function() {
+              //     // fail
+              //   },
+              //   complete: function() {
+              //     // complete
+              //   }
+              // })
+            }
+            return typeof cb == "function" && cb(data.code)
+          })
+
+        },
+        fail: function() {
+          // fail
+        },
+        complete: function() {
+          // complete
+        }
+      })
+}
+//
+
+
+//登陆
+function login () {
+  var that = this;
+  wx.login({
+    success: function (res) {
+      console.log(res)
+      req('user/login', {
+        "code": res.code,
+        "errMsg":res.errMsg
+      }, function (data) {        //获取请求返回的内容
+        setUid(data.data.uid);  //存储用户的openid
+        accessToken(data.data.accessToken);
+        console.log(data)
+      })
+    },
+    fail: function (res) {
+      that.loginFail();
+    }
+  })
+}
 // 去前后空格  
 function trim(str) {
   return str.replace(/(^\s*)|(\s*$)/g, "");
@@ -150,6 +210,7 @@ function escape2Html(str) {
 
 
 module.exports = {
+  rootUrl:rootUrl,
   formatTime: formatTime,
   req: req,
   trim: trim,
@@ -158,5 +219,6 @@ module.exports = {
   getReq: getReq,
   getDateDiff: getDateDiff,
   escape2Html: escape2Html,
-  getDateBiff: getDateBiff
+  getDateBiff: getDateBiff,
+  checkAt:checkAt,
 }  

@@ -151,6 +151,7 @@
 }
 
 .activityInfo .activityTitle {
+    color: rgb(247, 7, 7);
     font-size: 15px;
     width: 530rpx;
     display: inline-block;
@@ -579,8 +580,8 @@
 }
 
 .businessInfo .salerInfo .pic {
-    width: 200rpx;
-    height: 200rpx;
+    width: 180rpx;
+    height: 180rpx;
     float: left;
 }
 
@@ -605,4 +606,24 @@
     line-height: 46rpx;
     padding: 10rpx 30rpx;
     color: #e48e0d;
+}
+
+.productIntro {
+    color: #787878;
+    font-size: 13px;
+    margin-top: 3rpx;
+}
+
+.productLeft {
+    padding-top: 5rpx;
+    float: center;
+    /* width: 520rpx; */
+    overflow: hidden;
+}
+
+.ActivityTitle{
+    text-align: center;
+    color: #e48e0d;
+    font-size: 20px;
+    margin-top: 3rpx;
 }

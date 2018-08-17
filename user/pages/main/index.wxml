@@ -5,9 +5,9 @@
 <view class="SwiperLayout" wx:if="{{swiperList&&swiperList!=''}}">
     <swiper autoplay="true" class="swiper" indicatorDots="true" interval="5000">
         <block wx:for="{{swiperList}}" wx:key="id">
-            <navigator url="{{item.swiper_pageid}}">
+            <navigator url="{{item}}">
                 <swiper-item>
-                    <image mode="aspectFill" src="{{item.swiper_image}}" style="width:100%;height:100%;"></image>
+                    <image mode="aspectFill" src="{{rootUrl+item}}" style="width:100%;height:100%;"></image>
                     <!-- 要设定图片格式，style="width:100%;height:266rpx;" -->
                 </swiper-item>
             </navigator>
@@ -18,9 +18,9 @@
 <view class="NoticeList" wx:if="{{noticeList&&noticeList!=''}}">
     <image class="noticeico" src="../../resource/images/notice.png"></image>
     <swiper vertical autoplay="true" class="noticeswiper" interval="3000">
-        <navigator url="../../pages/notice/notice?noticeid={{item.id}}" wx:for="{{noticeList}}" wx:key="id">
+        <navigator url="../../pages/notice/notice?noticeid={{rootUrl+item.id}}" wx:for="{{noticeList}}" wx:key="id">
             <swiper-item>
-                <view class="noticetitle">{{item.title}}</view>
+                <view class="noticetitle">{{item}}</view>
                 <view class="clear"></view>
             </swiper-item>
         </navigator>
@@ -31,23 +31,75 @@
     <view class="clear"></view>
 </view>
 
+<view class="ActivityTop">
+    <navigator url="../../pages/kanjia_list/kanjia_list">
+        <view class="ActivityLabel">专业销售人员</view>
+        <image class="ActivityMore" src="../../resource/images/indexarrow.png"></image>
+        <view class="clear"></view>
+    </navigator>
+</view>
 <view class="businessInfo">
-    <view class="businessTitle">专业销售人员</view>
+
     <view class="salerInfo">
-        <image class="pic" mode="aspectFill" src="{{salerInfo.img}}"></image>
+        <image class="pic" mode="aspectFill" src="{{salerInfo.pic}}"></image>
         <view class="itemName">{{salerInfo.name}}</view>
         <view bindtap="copyTBL" class="businessRight">
                 <image class="businessTel" src="../../resource/images/edit.png"></image>
             </view> 
-        <view class="itemTitle">微信：{{salerInfo.wxNum}}</view>
+        <view class="itemTitle">微信：{{salerInfo.wechat}}</view>
         <view bindtap="CallBusiness" class="businessRight">
             <image class="businessTel" src="../../resource/images/tel.png"></image>
         </view>
-        <view class="itemTitle">手机：{{salerInfo.phoneNum}}</view>
+        <view class="itemTitle">手机：{{salerInfo.phone}}</view>
     </view>
     <view bindtap="OpenBusiness" class="businessLeft">
         <view class="businessAdr">{{salerInfo.intro}}</view>
     </view>
     <view class="clear"></view>
+</view>
+
+<view class="ActivityLayout">
+    <view class="ActivityTop">
+        <navigator url="../../pages/kanjia_list/kanjia_list">
+            <view class="ActivityLabel">产品&服务</view>
+            <image class="ActivityMore" src="../../resource/images/indexarrow.png"></image>
+            <view class="clear"></view>
+        </navigator>
+    </view>
+    <view class="ActivityList">
+        <view class="ActivityItem" wx:for="{{productList}}">
+            <navigator url="../../pages/detail/detail?activityid={{item.id}}">
+                <image class="ActivityPic" mode="aspectFill" src="{{item.pic}}"></image>
+                <view class="ActivityLeft">
+                    <view class="ActivityTitle">{{item.title}}</view>
+                </view>
+                <view class="productLeft">
+                    <view class="productIntro">{{item.intro}}</view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+</view>
+<view class="ActivityLayout">
+    <view class="ActivityTop">
+        <navigator url="../../pages/kanjia_list/kanjia_list">
+            <view class="ActivityLabel">资讯</view>
+            <image class="ActivityMore" src="../../resource/images/indexarrow.png"></image>
+            <view class="clear"></view>
+        </navigator>
+    </view>
+<view class="ActivityList">
+    <view class="ActivityItem">
+        <navigator url="../../pages/detail/detail?activityid={{item.id}}">
+            <image class="ActivityPic" mode="aspectFill" src="{{info.pic}}"></image>
+            <view class="ActivityLeft">
+                <view class="ActivityTitle">{{info.title}}</view>
+            </view>
+            <view class="productLeft">
+                <view class="productIntro">{{info.intro}}</view>
+            </view>
+        </navigator>
+    </view>
+</view>
 </view>
 

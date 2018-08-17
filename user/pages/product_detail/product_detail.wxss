@@ -168,7 +168,10 @@
     float: left;
     padding: 8rpx 30rpx;
 }
-
+.RightPrice{
+    float: right;
+    padding: 8rpx 30rpx;
+}
 .LowPrice {
     font-size: 18px;
     height: 46rpx;
@@ -232,9 +235,9 @@
 }
 
 .StockNum {
+    color: #e60012;
     font-size: 18px;
     display: block;
-    color: #e60012
 }
 
 .actionBar {

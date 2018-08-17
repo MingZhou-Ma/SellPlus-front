@@ -1,79 +1,57 @@
-var t = getApp();
+var e = getApp();
 
-// user/pages/my/my.js
 Page({
+    data: {
+        userInfo: [],
+        setting: [],
+        menutext: [ "我的砍价", "我的砍价订单" ],
+        menudata: [ {
+            imgsrc: "../../resource/images/bargain.png",
+            url: "../../pages/mybargain/mybargain",
+            id: "bargainlist"
+        }, {
+            imgsrc: "../../resource/images/order.png",
+            url: "../../pages/myorder/myorder",
+            id: "orderlist"
+        } ]
+    },
+    onLoad: function() {
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-    return {
-      title: t.siteInfo.name,
-      path: "user/pages/main/index",
-      success: function (t) {
-        wx.showToast({
-          title: "转发成功",
-          icon: "success",
-          duration: 1e3,
-          mask: !0
+    },
+    onShow: function() {},
+    onShareAppMessage: function() {},
+    GetSetting: function() {
+        var t = this;
+        e.util.request({
+            url: "entry/wxapp/getsetting",
+            cachetime: "0",
+            success: function(e) {
+                t.setData({
+                    setting: e.data.data
+                });
+            }
         });
-      }
-    };
-  },
-})
+    },
+    GetUserInfo: function() {
+        var t = this;
+        e.util.request({
+            url: "entry/wxapp/getuserinfo",
+            cachetime: "0",
+            data: {
+                uid: t.data.userId
+            },
+            success: function(e) {
+                t.setData({
+                    userInfo: e.data.data
+                }), t.GetSetting();
+            }
+        });
+    },
+    GoKefuQr: function() {
+        var e = this;
+        wx.previewImage({
+            current: e.data.setting.kefuqr,
+            urls: e.data.setting.kefuqr
+        });
+    }
+});
