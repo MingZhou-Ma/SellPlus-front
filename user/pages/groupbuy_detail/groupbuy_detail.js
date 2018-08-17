@@ -1,4 +1,4 @@
-// user/pages/groupbuy_detail/groupbuy_detail.js
+// cus/pages/groupbuy_detail/groupbuy_detail.js
 //用户扫码显示活动原生页面
 var t = getApp();
 var util = require('../../../utils/util.js');
@@ -87,7 +87,7 @@ Page({
     return  {
         title: a,
         imageUrl: p,
-        path: "user/pages/groupbuy_detail/groupbuy_detail?activityid=" + e.data.activityId,
+        path: "cus/pages/groupbuy_detail/groupbuy_detail?activityid=" + e.data.activityId,
         success: function (t) {
           wx.showToast({
             title: "转发成功",
@@ -112,7 +112,7 @@ Page({
       key: 'userId',
       success: function (res) {
         e.data.userId = res.data;
-        util.req('user/GetActivityDetail', {"activityid": e.data.activityId, }, function (t) {  //获取对应用户参与活动的信息
+        util.req('cus/GetActivityDetail', {"activityid": e.data.activityId, }, function (t) {  //获取对应用户参与活动的信息
           e.setData({
             activityInfo: t.activityInfo //活动赋值
           })
@@ -127,7 +127,7 @@ Page({
       key: 'userId',
       success: function(res) {
         e.data.userId=res.data;
-        util.req('user/IsJoin_Act', { "userid": e.data.userId,"activityid":e.data.activityId},function(t)        {
+        util.req('cus/IsJoin_Act', { "userid": e.data.userId,"activityid":e.data.activityId},function(t)        {
           e.setData({
             join_status:t.data.join_status,
             groupid:t.data.groupid
@@ -152,7 +152,7 @@ Page({
       key: 'userId',
       success: function (res) {
         e.data.userId = res.data;
-        util.req('user/AddGroup', { "userid": e.data.userId, "activityid": e.data.activityId }, function (t) {
+        util.req('cus/AddGroup', { "userid": e.data.userId, "activityid": e.data.activityId }, function (t) {
           e.setData({
             groupid: t.data.groupid
           })
@@ -171,7 +171,7 @@ GetRecommendList: function (){
     key: 'userId',
     success: function (res) {
       e.data.userId = res.data;
-      util.req('user/GetGroupRecommendList', { "userid": e.data.userId, "activityid": e.data.activityId }, function (t) {
+      util.req('cus/GetGroupRecommendList', { "userid": e.data.userId, "activityid": e.data.activityId }, function (t) {
         e.setData({
           recommendList: t.recommendList
         })

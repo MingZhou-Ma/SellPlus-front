@@ -164,7 +164,7 @@ Page({
       key: 'userId',
       success: function (res) {
         var userid = res.data;
-        util.req('user/GetGroupList', { "userid": userid, "group_status":s }, function (data) {  //获取对应用户参与活动的信息
+        util.req('cus/GetGroupList', { "userid": userid, "group_status":s }, function (data) {  //获取对应用户参与活动的信息
           a.setData({
             groupList: data.groupList,
             noMoreHidden: !1,
@@ -181,7 +181,7 @@ Page({
       key: 'accessToken',
       success: function (res) {
         var accessToken = res.data;
-        util.req('user/getHelpList', { "token":accessToken, "status":s }, function (data) {  //获取对应用户参与活动的信息
+        util.req('cus/getHelpList', { "token":accessToken, "status":s }, function (data) {  //获取对应用户参与活动的信息
           e.setData({
             helpList: data.data,
             noMoreHidden: !1,

@@ -66,11 +66,11 @@ Page({
    */
   onLoad: function (options) {
     let e = this
-    // t.getUserInfo(function(globalData){
-    //   e.setData({
-    //     accessToken:globalData.at
-    //   })
-    // })
+
+    t.getUserInfo(function(globalData){
+      console.log(globalData.at)
+    })
+    console.log(t.globalData.at)
     util.checkAt(function(code){
       if(code!=1000){
         wx.showModal({
@@ -96,7 +96,10 @@ else{
  
     })
 
-
+  // e.getMainInfo();
+  // e.getSalerInfo();
+  // var kk =wx.getStorageInfoSync('kk')
+  // console.log(kk)
   },
 
   onShow:function(){
@@ -123,7 +126,7 @@ else{
   copyTBL:function(e){
     var self=this;
     wx.setClipboardData({
-    data: this.data.salerInfo.tel,
+    data: this.data.salerInfo.wechat,
     success: function(res) {
       // self.setData({copyTip:true}),
       wx.showModal({
@@ -144,7 +147,7 @@ else{
   CallBusiness: function() {
     var t = this;
     wx.makePhoneCall({
-        phoneNumber: t.data.salerInfo.tel
+        phoneNumber: t.data.salerInfo.phone
     });
 },
 

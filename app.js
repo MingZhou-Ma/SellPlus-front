@@ -1,7 +1,10 @@
 //app.js
 var util = require('utils/util.js');
 App({
-
+  globalData: {
+    act:"",
+    uid:"",
+  },
   onLaunch: function () {
     var that = this;
 
@@ -19,15 +22,16 @@ App({
     that.login()
   },
 
+
   login: function () {
     var that = this;
     wx.login({
       success: function (res) {
-        util.req('user/login', {
+        util.req('cus/login', {
           "code": res.code,
           "errMsg":res.errMsg
         }, function (data) {        //获取请求返回的内容
-          // wx.setStorageSync("uid",data.data.uid)
+          wx.setStorageSync('kk',data.data.uid)
           // wx.setStorageSync("accessToken",data.data.accessToken)
           that.setUid(data.data.uid);  //存储用户的openid
           that.accessToken(data.data.accessToken);
@@ -59,9 +63,9 @@ App({
   },
 
   accessToken: function (data) {   //将用户信息缓存保存
-    this.globalData.at=data
+    let that=this
+    that.globalData.at=data
     console.log("设置token成功")
-    this.globalData.sk = data;
     wx.setStorage({
       key: "accessToken",
       data: data
@@ -70,12 +74,10 @@ App({
 
   getUserInfo: function (cb) {
     var that = this
-      return typeof cb == "function" && cb(this.globalData)
+      return typeof cb == "function" && cb(that.globalData)
     },
-globalData: {
-  uid: null,
-  at:null
-},
+
+
 
 
 })

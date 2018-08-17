@@ -53,7 +53,21 @@ function getReq(url, data, cb) {
     }
   })
 }
+//
+function bindSeller(uid){
+  let e=this
+  wx.getStorage({
+    key: 'accessToken',
+    success: function(res){
+      // success
+      let accessToken=res.data
+      req('cus/bindSeller',{"token":accessToken,"uid":uid},function(data){
+        console.log(data)
+      })
+    },
 
+  })
+}
 //检查accessToken是否过期
 function checkAt(cb){
       wx.getStorage({
@@ -221,4 +235,5 @@ module.exports = {
   escape2Html: escape2Html,
   getDateBiff: getDateBiff,
   checkAt:checkAt,
+  bindSeller:bindSeller,
 }  

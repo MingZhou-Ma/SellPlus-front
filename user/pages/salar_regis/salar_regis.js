@@ -67,6 +67,7 @@ Page({
 
     salarRegis:function(){
         var e = this;
+        console.log(e.data.avatarUrl)
         wx.getStorage({     //检查session_key
           key: 'accessToken',
           success: function (res) {

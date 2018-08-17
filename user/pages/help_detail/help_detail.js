@@ -158,7 +158,7 @@ AddHelp: function() {
       key: 'accessToken',
       success: function (res) {
         let accessToken = res.data
-        util.req('user/addHelp', { "token":accessToken,"activityid": e.data.activityId, }, function (data) {
+        util.req('cus/addHelp', { "token":accessToken,"activityid": e.data.activityId, }, function (data) {
           e.setData({
           })
           console.log(data)

@@ -1,4 +1,4 @@
-var t = getApp()
+var app = getApp()
 var util = require('../../../utils/util.js')
 Page({
     data: {
@@ -61,7 +61,34 @@ Page({
     onLoad: function(t) {
       var e=this
       console.log(t.helpid)
-      e.GetMyHelpDetail(t.helpid)
+      console.log("Uid="+app.globalData.uid)
+      console.log("t.uid="+t.uid)
+      util.bindSeller(t.uid)
+
+      util.checkAt(function(code){
+        if(code!=1000){
+          app.login()
+          wx.showModal({
+            title: '提示',
+            content: '您的登陆已经过期,请按确定重新登陆',
+            success: function(res) {
+              if (res.confirm) {
+                console.log('确定')
+                e.GetMyHelpDetail(t.helpid)
+              } else if (res.cancel) {
+                console.log('取消')
+              }
+            }
+      })
+  
+  }
+  else{
+    e.GetMyHelpDetail(t.helpid)
+  }
+  
+   
+      })
+     
       e.setData({
         // progressWidth:(e.data.helpInfo.helpCount/e.data.helpInfo.activity.helpNum)*100,
         // progressNowpriceLeft: (e.data.helpInfo.helpCount / e.data.helpInfo.activity.helpNum) * 100,    
@@ -80,7 +107,7 @@ Page({
         return  {
             title: a,
             imageUrl: e,
-            path: "user/pages/my_help/my_help?helpid=" + t.data.helpId,//+"&uid"+t.data.uid,
+            path: "user/pages/my_help/my_help?helpid=" + t.data.helpId+"&uid="+app.globalData.uid,
             success: function(t) {
                 wx.showToast({
                     title: "转发成功",
@@ -129,7 +156,7 @@ Page({
     GetHelpPoster: function () {
       var e=this
       var url = "user/pages/my_help/my_help";   //当前页面url
-      util.req('user/GetPoster', { "title": e.data.helpInfo.title, "type": e.data.posterType, "scene": e.data.helpId,"url":url }, function (t) {  
+      util.req('cus/GetPoster', { "title": e.data.helpInfo.title, "type": e.data.posterType, "scene": e.data.helpId,"url":url }, function (t) {  
         e.setData({
           posterImg: t
         })
@@ -172,7 +199,7 @@ Page({
         key: 'accessToken',
         success: function (res) {
           var accessToken = res.data;
-          util.req('user/helpOne', { "token": accessToken, "helpid": e.data.helpId, }, function (data) {  //获取对应用户参与活动的信息
+          util.req('cus/helpOne', { "token": accessToken, "helpid": e.data.helpId, }, function (data) {  //获取对应用户参与活动的信息
             console.log(data)
             if (data.code == 1000) {
               wx.showModal({
@@ -182,6 +209,9 @@ Page({
 
                 }
               })
+            }
+            if(data.code=1100){
+              e.onLoad();
             }
             else {
               wx.showModal({
@@ -200,30 +230,7 @@ Page({
 
     },
 
-    // bindSeller:function(uid){
-    //   let e=this
-    //   wx.getStorage({
-    //     key: 'accessToken',
-    //     success: function(res){
-    //       // success
-    //       let accessToken=res.data
-    //       util.req('cus/bindSeller',{"token":accessToken,"uid":uid},function(data){
-    //         e.setData({
-              
-    //         })
-    //         console.log(data)
-    //       })
-    //     },
-    //     fail: function() {
-    //       // fail
-    //     },
-    //     complete: function() {
-    //       // complete
-    //     }
-    //   })
 
-
-    // },
 
 
     GetMyHelpDetail: function (s) {    //获取我的好友助力活动详情
@@ -248,7 +255,7 @@ Page({
         key: 'accessToken',
         success: function (res) {
           let accessToken =res.data
-          util.req('user/getHelpDetail', { "token": accessToken,"helpid": s, }, function (data) {
+          util.req('cus/getHelpDetail', { "token": accessToken,"helpid": s, }, function (data) {
             e.setData({
               helpInfo: data.data //活动赋值
               // lacknum:helpInfo.activity.helpNum-helpInfo.helpCount         
@@ -269,7 +276,7 @@ Page({
         key: 'accessToken',
         success: function (res) {
           let accessToken = res.data
-          util.req('user/addHelp', { "token":accessToken,"activityid": e.data.activityId, }, function (data) {
+          util.req('cus/addHelp', { "token":accessToken,"activityid": e.data.activityId, }, function (data) {
             e.setData({
             })
             console.log(data)

@@ -45,7 +45,7 @@
                 </navigator>
             </view>
             <view class="MenuItem">
-                    <navigator class="MenuUrl" url="../../pages/apply/apply">
+                    <navigator class="MenuUrl" url="../../pages/salar_regis/salar_regis">
                         <image class="MenuIcon" src="../../resource/images/apply.png"></image>
                         <view class="MenuText">我是销售</view>
                     </navigator>
