@@ -71,13 +71,49 @@ App({
       data: data
     })
   },
-
+  showLoad: function(e) {
+    wx.showLoading({
+        title: e.title,
+        mask: e.mask
+    });
+},
   getUserInfo: function (cb) {
     var that = this
       return typeof cb == "function" && cb(that.globalData)
     },
 
-
-
+    showToast: function(e) {
+      e.icon && "fault" == e.icon ? wx.showToast({
+          title: e.title,
+          icon: e.icon,
+          duration: e.duration || 2e3,
+          image: "/images/base/fault.png",
+          success: function(t) {
+              "function" == typeof e.success && e.success(t);
+          },
+          fail: function(t) {
+              "function" == typeof e.fail && e.fail(t);
+          },
+          complete: function(t) {
+              "function" == typeof e.complete && e.complete(t);
+          }
+      }) : wx.showToast({
+          title: e.title,
+          icon: e.icon,
+          duration: e.duration || 2e3,
+          success: function(t) {
+              "function" == typeof e.success && e.success(t);
+          },
+          fail: function(t) {
+              "function" == typeof e.fail && e.fail(t);
+          },
+          complete: function(t) {
+              "function" == typeof e.complete && e.complete(t);
+          }
+      });
+  },
+  hideLoad: function() {
+    wx.hideLoading();
+},
 
 })

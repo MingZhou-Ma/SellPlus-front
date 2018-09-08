@@ -1,23 +1,24 @@
-  {
-    "pages":[
+{
+  "pages": [
+    "user/pages/exper_sharing/exper_sharing",
+
     "user/pages/main/index",
+    "user/pages/my_contact/my_contact",
+    "user/pages/news/news",
+    "user/pages/welfare_list/welfare_list",
     "user/pages/salar_regis/salar_regis",
     "user/pages/appointment/appointment",
-    "user/pages/my/my",    
+    "user/pages/my/my",
     "user/pages/help_detail/help_detail",
     "user/pages/product_detail/product_detail",
     "user/pages/pdORsv/pdORsv",
-    "user/pages/logs/logs",
-    "business/pages/index/index",
-    "user/pages/groupbuy_detail/groupbuy_detail",
     "user/pages/my_list/my_list",
-    "user/pages/my_help/my_help",
-    "user/pages/mygroup_detail/mygroup_detail"
+    "user/pages/my_help/my_help"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "微活动Plus",
+    "navigationBarTitleText": "销售Plus",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
@@ -33,16 +34,16 @@
         "selectedIconPath": "user/resource/images/home_s.png"
       },
       {
-        "pagePath":"user/pages/pdORsv/pdORsv",
+        "pagePath": "user/pages/pdORsv/pdORsv",
         "text": "产品&服务",
         "iconPath": "user/resource/tabbar/gray/dialogue.png",
         "selectedIconPath": "user/resource/tabbar/red/dialogue.png"
       },
       {
-        "pagePath":"user/pages/my/my",
-        "text":"福利",
-        "iconPath":"user/resource/tabbar/gray/recommend_s.png",
-        "selectedIconPath":"user/resource/tabbar/red/recommend.png"
+        "pagePath": "user/pages/welfare_list/welfare_list",
+        "text": "福利",
+        "iconPath": "user/resource/tabbar/gray/recommend_s.png",
+        "selectedIconPath": "user/resource/tabbar/red/recommend.png"
       },
       {
         "pagePath": "user/pages/my/my",

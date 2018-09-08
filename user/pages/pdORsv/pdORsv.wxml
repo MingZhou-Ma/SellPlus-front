@@ -8,10 +8,9 @@
     <view class="ActivityList">
         <view class="ActivityItem" wx:for="{{productList}}">
             <navigator url="../../pages/product_detail/product_detail?productid={{item.id}}">
-                <image class="ActivityPic" mode="aspectFill" src="{{rootUrl+item.picList[0]}}"></image>
-                <view class="ActivityLeft">
-                    <view class="ActivityTitle">{{item.name}}</view>
-                </view>
+                <!-- <image class="ActivityPic" mode="aspectFill" src="{{rootUrl+item.picList[0]}}"></image> -->
+                <image class="ActivityPic" mode="aspectFill" src="{{item.pic}}"></image>
+                    <view class="ActivityTitle">{{item.title}}</view>
             </navigator>
         </view>
     </view>
@@ -22,7 +21,8 @@
     <view class="bargainItem" wx:for="{{helpList}}" wx:for-item="itemName">
         <navigator url="../../pages/help_detail/help_detail?activityid={{itemName.id}}">
             <view class="bargainActivity">
-                <image class="bargainPic" mode="aspectFill" src="{{rootUrl+itemName.product.pic}}"></image>
+                <!-- <image class="bargainPic" mode="aspectFill" src="{{rootUrl+itemName.product.pic}}"></image> -->
+                <image class="bargainPic" mode="aspectFill" src="{{itemName.product.pic}}"></image>
                 <view class="bargainTitle">{{itemName.headline}}</view>
                 <view class="clear"></view>
             </view>

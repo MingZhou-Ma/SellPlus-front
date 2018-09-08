@@ -1,0 +1,10 @@
+
+<view class="input_control">
+    <input type="text" class="form_input" placeholder="{{my_info.name}}" value="{{salarId}}"/>
+</view>
+<view class="input_control">
+    <input type="text" class="form_input"  placeholder="{{my_info.tel}}"/>
+</view>
+<button class="green_btn"  bindtap="write">填写/修改</button>
+
+

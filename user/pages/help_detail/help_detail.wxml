@@ -5,8 +5,11 @@
     </view>
     <swiper autoplay="true" class="swiper" indicatorDots="true" interval="10000">
         <swiper-item wx:for="{{activityInfo.product.picList}}" wx:key="id">
-            <image mode="aspectFill" src="{{rootUrl+item}}" style="width:100%;height:400rpx;"></image>
+            <image mode="aspectFill" src="{{item}}" style="width:100%;height:400rpx;"></image>
+
+            <!-- <image mode="aspectFill" src="{{rootUrl+item}}" style="width:100%;height:400rpx;"></image> -->
         </swiper-item>
+        
     </swiper>
     <!-- <view class="PriceBar">
         <view class="LeftPrice">
@@ -80,15 +83,15 @@
     </view>
 </view>
 
-<view class="businessInfo" wx:if="{{activityInfo.business.name!=''}}">
+<view class="businessInfo" >
     <view class="businessTitle">商家信息</view>
-    <view bindtap="OpenBusiness" class="businessLeft">
+    <view class="businessLeft">
         <view class="businessName">{{MerInfo.shopName}}</view>
         <view class="businessAdr">{{MerInfo.location}}</view>
     </view>
-    <view bindtap="CallBusiness" class="businessRight">
+    <!-- <view bindtap="CallBusiness" class="businessRight">
         <image class="businessTel" src="../../resource/images/tel.png"></image>
-    </view>
+    </view> -->
     <view class="clear"></view>
 </view>
 <!-- 商品详情+评论模块 -->
@@ -140,13 +143,13 @@
                 </view>
                 <view class="padd-tb16 bord-t1 bord-c flex1 flex-r" wx:if="{{item.Replys}}">
                     <view class="mj-img marg-r8"></view>
-                    <view class="flex-1">
+                    <!-- <view class="flex-1">
                         <view class="flex flex-r">
                             <text class="flex-1 tx-14 tx-999 lh-1">商家回复</text>
                             <text class="tx-13 tx-999 lh-1">{{item.ReplyTime}}</text>
                         </view>
                         <text class="marg-t8 block tx-13 tx-333 lh-105">{{item.Replys}}</text>
-                    </view>
+                    </view> -->
                 </view>
             </view>
         </view>
@@ -166,12 +169,12 @@
 </view>
 
 <view class="actionBar">
-    <view catchtap="toHome" class="addFav {{activityInfo.status==1&&activityInfo.stock!=0?'short':'long'}}">
+    <view catchtap="toHome" class="addFav {{activityInfo.status==1?'short':'long'}}">
         <image class="favIcon" src="../../resource/images/home.png"></image>
         <view class="favText">收藏</view>
     </view>
 
-    <view class="shareGood {{activityInfo.status==1&&activityInfo.stock!=0?'short':'long'}}">
+    <view class="shareGood {{activityInfo.status==1?'short':'long'}}">
         <button class="shareBtn" openType="share">
             <image class="shareIcon" src="../../resource/images/share.png"></image>
             <view class="shareText">分享</view>

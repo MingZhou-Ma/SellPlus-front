@@ -2,29 +2,15 @@ var t = getApp()
 var util = require('../../../utils/util.js')
 Page({
 data: {
-productInfo:
-{
-  "pic":"static/upload/237d1f33be615ab567cee937241bd35.jpg",
-  // "title": "这是一个非常有趣的商品",
-  //   "img": [
-  //     "http://img1.3lian.com/2015/w7/85/d/101.jpg",
-  //     "http://img1.3lian.com/2015/w7/85/d/101.jpg",
-  //   ],
-  // "helpprice": 99,
-  // "oldprice": 114,
-  // "format_starttime": "2017/03/03 03:03:03",
-  // "format_endtime": "2017/06/03 03:03:03",
-  // "stock": 65,
-  // "validity": "2017/07/03 03:03:03",
-  // "helpnum": 4,
-  // "status": 0,
-  // "business":
-  //   {
-  //     "name": "万达连锁超市",
-  //     "address": "广东省广州市番禺区科韵路塘下20号",
-  //     "tel": "13124253333",
-  //   }
-},
+  productList:[
+    {
+      "id":"1",
+      "pic":"http://img.my.csdn.net/uploads/201407/26/1406382861_8606.jpg",
+      "title":"ARMANI 休闲牛仔裤",
+      "intro":"版型修身，剪裁流畅简洁。优质棉面料，穿着柔软舒适。选用精湛的工艺制成，凸显品牌质量。"
+    },
+  ],
+
   recommendList: [
     {
       "id": 3,
@@ -70,8 +56,8 @@ onLoad: function(a) {
     e.setData({
       productId:a.productid
     })
-    e.GetMerInfo()
-    e.GetProductDetail(a.productid)  
+    // e.GetMerInfo()
+    // e.GetProductDetail(a.productid)  
   },
 
 toHome: function() {

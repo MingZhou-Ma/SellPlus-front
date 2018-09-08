@@ -8,21 +8,33 @@ Page({
    * 页面的初始数据
    */
   data: {
-      productList:[
-        // {
-        //   "id":"1",
-        //   "pic":"http://img1.3lian.com/2015/w7/85/d/101.jpg",
-        //   "title":"超级优惠学车服务不来白不来",
-        //   "intro":"超级无敌可爱裂心无所谓之所谓值得很搞笑的超级无敌宇宙银河系优惠学车服务不来白不来"
-        // },
-        // {
-        //   "id":"1",
-        //   "pic":"http://img1.3lian.com/2015/w7/85/d/101.jpg",
-        //   "title":"超级优惠学车服务不来白不来",
-        //   "intro":"超级无敌可爱裂心无所谓之所谓值得很搞笑的超级无敌宇宙银河系优惠学车服务不来白不来"
-        // },
+    productList:[
+      {
+        "id":"1",
+        "pic":"http://img.my.csdn.net/uploads/201407/26/1406382861_8606.jpg",
+        "title":"ARMANI 休闲牛仔裤",
+        "intro":"版型修身，剪裁流畅简洁。优质棉面料，穿着柔软舒适。选用精湛的工艺制成，凸显品牌质量。"
+      },
+      {
+        "id":"1",
+        "pic":"http://img.my.csdn.net/uploads/201407/26/1406382839_5779.jpg",
+        "title":"Gucci logo条纹短裤",
+        "intro":"宽松直筒的版式，修饰臀腿，遮掩赘肉。"
+      },
+    ],
+      helpList:[
+        {
+          "id":1,
+          "headline":"朗格双面沙发垫四季通用防滑布艺沙发套全包万能套罩巾坐垫子",
+          "groupPrice":99,
+          "helpNum":6,
+          "endDate":"2018/12/06/12:00",
+          "product":{
+            "pic":"http://img.my.csdn.net/uploads/201407/26/1406382765_7341.jpg",
+            "price":128,
+          }
+        }
       ],
-      helpList:[],
       currentTab: 0,
       rootUrl:util.rootUrl,
       xiangqing: [{

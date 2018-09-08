@@ -3,23 +3,28 @@
         <view class="form_con">
             <input bindinput="bindSalarId" class="goodinput" placeholder="请输入销售账号" value="{{salarId}}"></input>
         </view>
+
         <view class="form_con">
                 <input bindinput="bindSalarKey" class="goodinput" placeholder="请输入密码" value="{{salarKey}}"></input>
-            </view>
+        </view>
+
         <view class="form_con">
             <input bindinput="bindName" class="goodinput" placeholder="请输入姓名" value="{{name}}"></input>
         </view>
+
         <view class="form_con">
                 <input bindinput="bindTel" class="goodinput" placeholder="请输入电话号码" value="{{tel}}"></input>
         </view>
+
         <view class="form_con">
             <input bindinput="bindWeChat" class="goodinput" placeholder="请输入微信号码" value="{{wechat}}"></input>
        </view>
+
        <view class="form_con">
         <input bindinput="bindIntro" class="goodinput" placeholder="请输入个人简介" value="{{intro}}"></input>
       </view>
 
-    </view>
+</view>
     
     <button class="green_btn"  bindtap="salarRegis">提交</button>
     

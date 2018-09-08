@@ -1,0 +1,33 @@
+<view class="container">
+<view class="section">
+    <form  bindsubmit="bindFormSubmit">
+        <textarea placeholder="请输入一句话心得" auto-focus name="textarea" />
+        <view class="padd-rl16 padd-b16 flex flex-r">
+            <view catchtap="addimg" class="marg-r8 up-img bg-f8f bord-a1 bord-c flex flex-r ovfl" data-id="{{item.productId}}">
+                <view class="flex-1 flex flex-c tx-999">
+                    <span class="iconfont icon-upload-photo tx-24 lh-1"></span>
+                    <text class="marg-t6 tx-13 lh-1">添加图片</text>
+                </view>
+            </view>
+            <view class="up-img marg-r8 bord-a1 bord-c ovfl" wx:for="{{tempFilePaths}}" wx:for-item="itemImg">
+                <image class="w100e" bindtap="imgYu" mode="widthFix" data-list="{{tempFilePaths}}" data-src="{{itemImg}}" src="{{itemImg}}"></image>
+            </view>
+        </view>
+        
+        <button class="green_btn" form-type="submit">生成心得海报</button>
+    </form>
+</view>
+<view class='imagePathBox' hidden="{{maskHidden == false}}">
+    <image src="{{imagePath}}" class='shengcheng'></image>
+    <button class='baocun' bindtap='baocun'>保存相册，分享到朋友圈</button>
+  </view>
+ <view hidden="{{maskHidden == false}}" class="mask"></view> 
+<view class="canvas-box">
+    <canvas  style="width: 375px;height: 667px;position:fixed;top:9999px" canvas-id="mycanvas"/>
+</view>  
+</view>
+
+
+
+
+    

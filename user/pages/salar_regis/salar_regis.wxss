@@ -9,8 +9,8 @@
 }
 
 .FormLayout .goodinput {
-    height: 50rpx;
-    width: 75%;
+    height: 100rpx;
+    width: 100%;
     padding: 30rpx 5%;
     color: #777;
 }

@@ -7,7 +7,9 @@
         <block wx:for="{{swiperList}}" wx:key="id">
             <navigator url="{{item}}">
                 <swiper-item>
-                    <image mode="aspectFill" src="{{rootUrl+item}}" style="width:100%;height:100%;"></image>
+                    <!-- <image mode="aspectFill" src="{{rootUrl+item}}" style="width:100%;height:100%;"></image> -->
+                    <image mode="aspectFill" src="{{item}}" style="width:100%;height:100%;"></image>
+
                     <!-- 要设定图片格式，style="width:100%;height:266rpx;" -->
                 </swiper-item>
             </navigator>
@@ -18,7 +20,7 @@
 <view class="NoticeList" wx:if="{{noticeList&&noticeList!=''}}">
     <image class="noticeico" src="../../resource/images/notice.png"></image>
     <swiper vertical autoplay="true" class="noticeswiper" interval="3000">
-        <navigator url="../../pages/notice/notice?noticeid={{rootUrl+item.id}}" wx:for="{{noticeList}}" wx:key="id">
+        <navigator url="../../pages/notice/notice?noticeid={{item.id}}" wx:for="{{noticeList}}" wx:key="id">
             <swiper-item>
                 <view class="noticetitle">{{item}}</view>
                 <view class="clear"></view>
@@ -33,7 +35,7 @@
 
 <view class="ActivityTop">
     <navigator url="../../pages/kanjia_list/kanjia_list">
-        <view class="ActivityLabel">专业销售人员</view>
+        <view class="ActivityLabel">专业顾问</view>
         <image class="ActivityMore" src="../../resource/images/indexarrow.png"></image>
         <view class="clear"></view>
     </navigator>
@@ -55,6 +57,7 @@
     <view bindtap="OpenBusiness" class="businessLeft">
         <view class="businessAdr">{{salerInfo.intro}}</view>
     </view>
+    <button style="opacity: 0.5;color: white; background-color: #ff0000;"   class="marginview"  bindtap="syncToAddress">同步到通讯录</button>
     <view class="clear"></view>
 </view>
 
@@ -68,11 +71,11 @@
     </view>
     <view class="ActivityList">
         <view class="ActivityItem" wx:for="{{productList}}">
-            <navigator url="../../pages/detail/detail?activityid={{item.id}}">
+            <navigator url="../../pages/product_detail/product_detail?activityid={{item.id}}">
                 <image class="ActivityPic" mode="aspectFill" src="{{item.pic}}"></image>
-                <view class="ActivityLeft">
+                
                     <view class="ActivityTitle">{{item.title}}</view>
-                </view>
+                
                 <view class="productLeft">
                     <view class="productIntro">{{item.intro}}</view>
                 </view>
@@ -89,14 +92,14 @@
         </navigator>
     </view>
 <view class="ActivityList">
-    <view class="ActivityItem">
-        <navigator url="../../pages/detail/detail?activityid={{item.id}}">
-            <image class="ActivityPic" mode="aspectFill" src="{{info.pic}}"></image>
-            <view class="ActivityLeft">
-                <view class="ActivityTitle">{{info.title}}</view>
-            </view>
+    <view class="ActivityItem" wx:for="{{infoList}}">
+        <navigator url="../../pages/news/news?newsid={{item.id}}">
+            <image class="ActivityPic" mode="aspectFill" src="{{item.pic}}"></image>
+        
+                <view class="infoTitle">{{item.title}}</view>
+            
             <view class="productLeft">
-                <view class="productIntro">{{info.intro}}</view>
+                <view class="productIntro">{{item.intro}}</view>
             </view>
         </navigator>
     </view>

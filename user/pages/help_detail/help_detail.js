@@ -4,25 +4,25 @@ Page({
 data: {
 activityInfo:
 {
-  // "title": "这是一个非常有趣的拼团活动",
-  //   "img": [
-  //     "http://img1.3lian.com/2015/w7/85/d/101.jpg",
-  //     "http://img1.3lian.com/2015/w7/85/d/101.jpg",
-  //   ],
-  // "helpprice": 99,
-  // "oldprice": 114,
-  // "format_starttime": "2017/03/03 03:03:03",
-  // "format_endtime": "2017/06/03 03:03:03",
-  // "stock": 65,
-  // "validity": "2017/07/03 03:03:03",
-  // "helpnum": 4,
-  // "status": 0,
-  // "business":
-  //   {
-  //     "name": "万达连锁超市",
-  //     "address": "广东省广州市番禺区科韵路塘下20号",
-  //     "tel": "13124253333",
-  //   }
+  "id":1,
+  "headline":"朗格双面沙发垫四季通用防滑布艺沙发套全包万能套罩巾坐垫子",
+  "groupPrice":99,
+  "helpNum":6,
+  "endDate":"2018/12/06/12:00",
+  "startDate":"2018/10/12/12:00",
+  "status":1,
+  "product":{
+    "picList":
+    [
+      "http://img.my.csdn.net/uploads/201407/26/1406382765_7341.jpg",
+      "http://img.my.csdn.net/uploads/201407/26/1406382790_8326.jpg",  
+      "http://img.my.csdn.net/uploads/201407/26/1406382789_7174.jpg",  
+      "http://img.my.csdn.net/uploads/201407/26/1406382789_5170.jpg",  
+      "http://img.my.csdn.net/uploads/201407/26/1406382789_4118.jpg",  
+
+    ],
+    "price":128,
+  }
 },
   recommendList: [
     {
@@ -45,7 +45,11 @@ activityInfo:
     }
   ],
 activityId: "",
-
+MerInfo:
+{
+"shopName":"银泰百货精品旗舰店",
+"location":"广东省广州市番禺区广州大学城信息枢纽楼318"
+},
 rootUrl:util.rootUrl,
 helpid:"",
 mainColor: "#f94e5a",
@@ -65,12 +69,12 @@ MerInfo:{}
 
 
 onLoad: function(a) {
-    var e = this
-    e.setData({
-      activityId:a.activityid
-    })
-    e.GetHelpActivityDetail(a.activityid)
-    e.GetMerInfo()
+    // var e = this
+    // e.setData({
+    //   activityId:a.activityid
+    // })
+    // e.GetHelpActivityDetail(a.activityid)
+    // e.GetMerInfo()
 },
 
 toHome: function() {

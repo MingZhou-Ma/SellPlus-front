@@ -11,6 +11,7 @@
     </view>
     <view class="clear"></view>
 </view>
+ 
 
 <import src="../../templates/nomore.wxml"></import>
 <view class="bargainList" wx:if="{{actid==0}}">

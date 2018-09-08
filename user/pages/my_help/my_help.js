@@ -2,27 +2,18 @@ var app = getApp()
 var util = require('../../../utils/util.js')
 Page({
     data: {
-      helpInfo: {
-        // "id":1,
-        // "initiator": "",
-        // "helpnum": 4,
-        // "lacknum": 1,
-        // "activity": {
-        //   "title": "ReFa CARAT RAY美容仪铂金滚轮微电流 范冰冰日本瘦脸神器升级版",
-        //   "img": [
-        //     "http://img1.3lian.com/2015/w7/85/d/101.jpg",
-        //     "http://img1.3lian.com/2015/w7/85/d/101.jpg",
-        //   ],
-        //   "stock": 10,
-        //   "starttime": "2017/07/03 03:03:03",
-        //   "endtime": "2017/08/03 03:03:03",
-        //   "status": 1,
-        //   "helpnum": 5,
-        //   "oldprice": 99,
-        //   "helpprice": 28,
-        //   "validity": "2017/08/03 12:03:03"
-        // }
-      },
+      helpInfo: 
+        {
+          "id":1,
+          "headline":"朗格双面沙发垫四季通用防滑布艺沙发套全包万能套罩巾坐垫子",
+          "groupPrice":99,
+          "helpNum":6,
+          "endDate":"2018/12/06/12:00",
+          "product":{
+            "pic":"http://img.my.csdn.net/uploads/201407/26/1406382765_7341.jpg",
+            "price":128,
+          }
+        },
 
         recommendList:[
           {

@@ -14,21 +14,21 @@
 
         <block >
             <view class="MenuItem">
-                <navigator class="MenuUrl" url="../../pages/mygroup/mygroup">
-                    <image class="MenuIcon" src="../../resource/images/groupbuy.png"></image>
+                <navigator class="MenuUrl" url="../../pages/my_contact/my_contact">
+                    <image class="MenuIcon" src="../../resource/images/my.png"></image>
                     <view class="MenuText">我的联系方式</view>
                 </navigator>
             </view>
             <view class="MenuItem">
-                <navigator class="MenuUrl" url="../../pages/mygrouporder/mygrouporder">
+                <navigator class="MenuUrl" url="../../pages/my_list/my_list">
                     <image class="MenuIcon" src="../../resource/images/groupbuy.png"></image>
                     <view class="MenuText">我的助力活动</view>
                 </navigator>
             </view>
         </block>
         <view class="MenuItem">
-            <navigator class="MenuUrl" url="../../pages/apply/apply">
-                <image class="MenuIcon" src="../../resource/images/apply.png"></image>
+            <navigator class="MenuUrl" url="../../pages/exper_sharing/exper_sharing">
+                <image class="MenuIcon" src="../../resource/images/fav.png"></image>
                 <view class="MenuText">心得分享</view>
             </navigator>
         </view>
@@ -40,7 +40,7 @@
             </view>
             <view class="MenuItem">
                 <navigator class="MenuUrl" url="../../pages/verification_record/verification_record">
-                    <image class="MenuIcon" src="../../resource/images/verification.png"></image>
+                    <image class="MenuIcon" src="../../resource/images/recommend_s.png"></image>
                     <view class="MenuText">老司机送福利</view>
                 </navigator>
             </view>

@@ -171,3 +171,10 @@
 .yuan {
     font-size: 13px;
 }
+
+.ActivityTitle{
+    text-align: center;
+    color: #080500;
+    font-size: 30px;
+    margin-top: 3rpx;
+}
