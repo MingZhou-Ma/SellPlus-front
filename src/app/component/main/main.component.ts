@@ -97,6 +97,147 @@ export class MainComponent implements OnInit {
           }
         ]
     },
+    {
+      "id": "14",
+      "parentId": "0",
+      "name": "内容管理",
+      "keyWord": "qxgl",
+      "icon": 'fa-user',
+      "isExpend": false,
+      "children": [
+        {
+          "id": "34",
+          "parentId": "14",
+          "name": "Banner图管理",
+          "keyWord": "yhtj",
+          "icon": "fa-pencil-square-o",
+          "url": "/home/productInfo/add_product"
+        }, {
+          "id": "35",
+          "parentId": "14",
+          "name": "文案管理",
+          "keyWord": "yhlb",
+          "icon": "fa-list-alt",
+          "url": "/home/productInfo/productList"
+        }, {
+          "id": "36",
+          "parentId": "14",
+          "name": "资讯管理",
+          "keyWord": "yhlb",
+          "icon": "fa-list-alt",
+          "url": "/home/productInfo/productList"
+        }
+      ]
+  },
+  {
+    "id": "15",
+    "parentId": "0",
+    "name": "销售管理",
+    "keyWord": "qxgl",
+    "icon": 'fa-user',
+    "isExpend": false,
+    "children": [
+      {
+        "id": "37",
+        "parentId": "15",
+        "name": "增加销售",
+        "keyWord": "yhtj",
+        "icon": "fa-pencil-square-o",
+        "url": "/home/productInfo/add_product"
+      }, {
+        "id": "38",
+        "parentId": "15",
+        "name": "销售列表",
+        "keyWord": "yhlb",
+        "icon": "fa-list-alt",
+        "url": "/home/productInfo/productList"
+      }, 
+    ]
+},
+{
+  "id": "15",
+  "parentId": "0",
+  "name": "福利券管理",
+  "keyWord": "qxgl",
+  "icon": 'fa-user',
+  "isExpend": false,
+  "children": [
+    {
+      "id": "37",
+      "parentId": "15",
+      "name": "新建券",
+      "keyWord": "yhtj",
+      "icon": "fa-pencil-square-o",
+      "url": "/home/productInfo/add_product"
+    }, {
+      "id": "38",
+      "parentId": "15",
+      "name": "券列表",
+      "keyWord": "yhlb",
+      "icon": "fa-list-alt",
+      "url": "/home/productInfo/productList"
+    }, 
+    {
+      "id": "38",
+      "parentId": "15",
+      "name": "券核销",
+      "keyWord": "yhlb",
+      "icon": "fa-list-alt",
+      "url": "/home/productInfo/productList"
+    }, 
+    {
+      "id": "38",
+      "parentId": "15",
+      "name": "券核销记录",
+      "keyWord": "yhlb",
+      "icon": "fa-list-alt",
+      "url": "/home/productInfo/productList"
+    }, 
+  ]
+},
+{
+  "id": "15",
+  "parentId": "0",
+  "name": "互动营销管理",
+  "keyWord": "qxgl",
+  "icon": 'fa-user',
+  "isExpend": false,
+  "children": [
+    {
+      "id": "37",
+      "parentId": "15",
+      "name": "老司机活动管理",
+      "keyWord": "yhtj",
+      "icon": "fa-pencil-square-o",
+      "url": "/home/productInfo/add_product"
+    }, {
+      "id": "38",
+      "parentId": "15",
+      "name": "学车心得分享管理",
+      "keyWord": "yhlb",
+      "icon": "fa-list-alt",
+      "url": "/home/productInfo/productList"
+    }, 
+  ]
+},
+{
+  "id": "15",
+  "parentId": "0",
+  "name": "客户管理",
+  "keyWord": "qxgl",
+  "icon": 'fa-user',
+  "isExpend": false,
+  "children": [
+    {
+      "id": "37",
+      "parentId": "15",
+      "name": "用户列表",
+      "keyWord": "yhtj",
+      "icon": "fa-pencil-square-o",
+      "url": "/home/productInfo/add_product"
+    },
+  ]
+},
     ]}
 
   title: string = "首页";

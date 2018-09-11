@@ -47,6 +47,7 @@ export class PublicComponent {
 
   geteditor(editor){
     this.event.depiction=editor;
+    console.log(editor)
   }
 
 

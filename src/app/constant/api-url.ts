@@ -1,5 +1,5 @@
 // api
-export const base = 'http://192.168.1.110/'
+export const base = 'https://wx.meetwhy.com/'
 export const prefix = base + 'api/mer/'
 export const public_prefix = base + "api/pub/"
 export const api = {
