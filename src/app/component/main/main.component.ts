@@ -111,7 +111,7 @@ export class MainComponent implements OnInit {
           "name": "Banner图管理",
           "keyWord": "yhtj",
           "icon": "fa-pencil-square-o",
-          "url": "/home/productInfo/add_product"
+          "url": "/home/content_management/banner"
         }, {
           "id": "35",
           "parentId": "14",
@@ -125,7 +125,7 @@ export class MainComponent implements OnInit {
           "name": "资讯管理",
           "keyWord": "yhlb",
           "icon": "fa-list-alt",
-          "url": "/home/productInfo/productList"
+          "url": "/home/content_management/news"
         }
       ]
   },

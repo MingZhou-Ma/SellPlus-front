@@ -15,12 +15,12 @@ const appRoutes: Routes = [
   { 
      path: 'login',  
      loadChildren: 'app/login/login.module#LoginModule',
-//     canActivate:[AdminLoginGuard]
+    // canActivate:[AdminLoginGuard]
   },
   { 
      path: 'home',  
      loadChildren: 'app/component/main/main.module#MainModule',
- //    canActivate:[AdminLoginGuard]
+    // canActivate:[AdminLoginGuard]
   },
   {
      path:'**',

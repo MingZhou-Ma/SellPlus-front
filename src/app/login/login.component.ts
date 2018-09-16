@@ -11,7 +11,7 @@ import { Utils } from "../shared/util/utils";
 import {LoginService} from "../service/login.service"
 import { ConfirmConfig, AlertType, AlertConfig } from '../shared/modal/modal-model';
 import { ModalService } from '../shared/modal/modal.service';
-
+import{code} from "../constant/status-code"
 
 
 @Component({
@@ -59,14 +59,24 @@ export class LoginComponent implements OnInit {
    * 登录
    */
   login() {
-    this.loginService.login(this.loginForm.value.account, this.loginForm.value.password);
+    let that=this
+    this.loginService.login(this.loginForm.value.account, this.loginForm.value.password,function(errCode){
+      if(errCode==code.success){
+        that.router.navigate(['/home']);
+
+      }
+      else{
+        const toastCfg = new ToastConfig(ToastType.ERROR, '', '密码或账户出错', 3000);
+        that.toastService.toast(toastCfg);
+      }
+    });
 
     
     status=localStorage.getItem('isLogin')
     console.log(localStorage.getItem('isLogin'))
 
 
-    this.router.navigate(['/home']);
+    // this.router.navigate(['/home']);
   }
 
   register(){

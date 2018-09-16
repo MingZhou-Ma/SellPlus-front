@@ -27,7 +27,7 @@ export class ProductService {
     GetProductList(getdata:Function){
         let formData=new FormData();
         let accessToken=localStorage.getItem('accessToken')
-        formData.append('token',"mertoken")
+        formData.append('token',accessToken)
         console.log(accessToken)
         this.httpService.post(api.get_product_list,formData,function(successful,data,res){
             console.log(data['code'])
@@ -51,7 +51,7 @@ export class ProductService {
         formData.append("depiction",body.depiction)
         formData.append("price",body.price)
         let accessToken=localStorage.getItem('accessToken')
-        formData.append('token',"mertoken")
+        formData.append('token',accessToken)
         this.httpService.post(api.product_public,formData,function(successful,data,res){
             console.log(data['code'])
             let errCode=data['code']
@@ -61,8 +61,9 @@ export class ProductService {
 
     delete(productid:string,result:Function){
         let formData=new FormData();
+        let accessToken=localStorage.getItem('accessToken')
         formData.append("productid",productid)
-        formData.append('token',"mertoken")
+        formData.append('token',accessToken)
         this.httpService.post(api.product_delete,formData,function(successful,data,res){
             console.log(data['code'])
             let errCode=data['code']

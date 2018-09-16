@@ -73,6 +73,7 @@ export class HelpListComponent  {
         if(code==1000){
           const toastCfg = new ToastConfig(ToastType.SUCCESS, '', '删除成功！', 3000);
           that.toastService.toast(toastCfg);
+          that.getActList();
         }
       })
       // window.location.reload();

@@ -28,7 +28,7 @@ export class GetActInfoService {
         let formData=new FormData();
         formData.append('act_type',act_type);
         let accessToken=localStorage.getItem('accessToken')
-        formData.append('token',"mertoken")
+        formData.append('token',accessToken)
         console.log(accessToken)
         this.httpService.post(api.get_act_list,formData,function(successful,data,res){
             console.log(data['code'])
@@ -55,7 +55,7 @@ export class GetActInfoService {
         formData.append("endDate",body.endtime)
 
         let accessToken=localStorage.getItem('accessToken')
-        formData.append('token',"mertoken")
+        formData.append('token',accessToken)
 
         this.httpService.post(api.act_public,formData,function(successful,data,res){
             console.log(data['code'])
@@ -67,7 +67,8 @@ export class GetActInfoService {
     delete(activityid:string,result:Function){
         let formData=new FormData();
         formData.append("activityid",activityid)
-        formData.append('token',"mertoken")
+        let accessToken=localStorage.getItem('accessToken')
+        formData.append('token',accessToken)
         this.httpService.post(api.act_detele,formData,function(successful,data,res){
             console.log(data['code'])
             let errCode=data['code']

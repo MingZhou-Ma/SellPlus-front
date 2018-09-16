@@ -1,0 +1,29 @@
+<div class="c-content-inner">
+    <div class="row">
+       <div  class="col-md-12">
+           <p class="c-line-title">上传Banner图</p>
+           <button type="button" class="btn btn-danger c-mb15" (click)="toggle()">显示Banner图列表</button>
+                <app-img-upload (coverChange)="getimg($event)"></app-img-upload> 
+           <div class="row c-mb15">
+                 <div  class="col-md-12">
+                     <div class="card-deck"  c-image-viewer (onViewInit)="onViewInit($event)" >
+                             <div class="card" *ngFor="let img of maininfo.banners;let i = index">
+                                 <img class="card-img-top"   src="{{rooturl+img}}"  style="width:100%;height:80%">
+                                 <div class="card-block">
+                                        <h4 class="card-title">{{i+1}}</h4>
+                                </div>
+                                <div class="text-center">
+                                        <button class="btn btn-success btn-sm" style="height:50px;width:100px;" type="button" (click)="setmaininfo(i)"><i class="fa fa-pencil fa-fw"></i>更改</button>
+                                 </div>
+                             </div>
+                     </div>
+                 </div>
+                 
+            </div>
+ 
+
+            
+       </div>
+     </div>
+
+ </div>

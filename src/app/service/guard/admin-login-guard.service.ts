@@ -27,8 +27,10 @@ export class AdminLoginGuard implements CanActivate, CanActivateChild {
     if (localStorage.getItem('isLogin') === 'yes') {
       return true;
     }
+    else{
     this.router.navigate(['/login']);
     return false;
+    }
   }
 
 }

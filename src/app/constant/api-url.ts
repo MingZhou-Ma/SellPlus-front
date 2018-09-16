@@ -1,5 +1,5 @@
 // api
-export const base = 'https://wx.meetwhy.com/'
+export const base = "https://api.great-info.tech/"
 export const prefix = base + 'api/mer/'
 export const public_prefix = base + "api/pub/"
 export const api = {
@@ -16,5 +16,12 @@ export const api = {
   //文件上传
   imgupload:public_prefix+"uploadBase64",
   uploadpic:public_prefix+"uploadPic",
+  //公司后台主要信息设置
+  setMainInfo:prefix+"setMainInfo",
+  getMainInfo:public_prefix+"getMainInfo",
+  //营销文章相关
+  getnewslist:public_prefix+"listArticle",
+  addnews:prefix+"addArticle",
+  deletenews:prefix+"delArticle",
 };
 

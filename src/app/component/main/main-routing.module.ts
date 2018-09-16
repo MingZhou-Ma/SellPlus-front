@@ -17,6 +17,10 @@ const mainRoutes: Routes = [
   {
     path:"productInfo",
     loadChildren:"app/component/product/product.module#ProductModule"
+  },
+  {
+    path:"content_management",
+    loadChildren:"app/component/content_management/content_management.module#Content_ManagementModule",
   }
 ]}
 ];

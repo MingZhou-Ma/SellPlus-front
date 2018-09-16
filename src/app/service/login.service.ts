@@ -27,7 +27,7 @@ export class LoginService {
     private toastService: ToastService,
   ) { }
 
-  login(account: string, password: string) {
+  login(account: string, password: string,result:Function) {
 
 
     let hashCode = this.SHA256.convertToSHA256(password);
@@ -40,11 +40,12 @@ export class LoginService {
     this.httpService.post(api.login, formData, function (successful, data, res) {
         console.log(data['code']);
         let errCode = data['code'];
+        result(data['code'])
         if (errCode == code.success) 
         {
           console.log(`管理员登录成功`);
-          console.log(data['accessToken']);
-          localStorage.setItem("accessToken",data['accessToken']);
+          console.log("token: "+data['data']['accessToken']);
+          localStorage.setItem("accessToken",data['data']['accessToken']);
           localStorage.setItem('isLogin', 'yes');        }
          else 
          {

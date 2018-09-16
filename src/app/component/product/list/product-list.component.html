@@ -20,14 +20,14 @@
                 </thead>
                 <tbody>
                     <tr *ngFor="let data of dataList;let i = index">
-                    <td class="text-center">{{i+1}}</td>
-                    <td class="text-center">{{data.name}}</td>
-                    <td class="text-center">{{data.intro}}</td>
-                    <td class="text-center">{{data.price}}</td>
-                    <td class="text-center">
+                    <td class="text-center" style="display:table-cell; vertical-align:middle">{{i+1}}</td>
+                    <td class="text-center" style="display:table-cell; vertical-align:middle">{{data.name}}</td>
+                    <td class="text-center" style="display:table-cell; vertical-align:middle">{{data.intro}}</td>
+                    <td class="text-center" style="display:table-cell; vertical-align:middle">{{data.price}}</td>
+                    <td class="text-center" style="display:table-cell; vertical-align:middle">
                         <button class="btn btn-info btn-sm" ><i class="fa fa-search fa-fw"></i> 查看</button>
                         <button class="btn btn-success btn-sm"><i class="fa fa-pencil fa-fw"></i> 编辑</button>
-                        <button class="btn btn-danger btn-sm" type="button" (click)="delete(data.id)">删除</button>
+                        <button class="btn btn-danger btn-sm" type="button" (click)="delete(data.id)"><i class="fa fa-trash-o fa-fw"></i>删除</button>
                     </td>
                     </tr>
                 </tbody>
