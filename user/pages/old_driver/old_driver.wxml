@@ -1,0 +1,26 @@
+
+<view class="container">
+    <view style="background: #fff;padding:32rpx 0">
+        <view class="bargainInfo">
+            <view class="infoItem">
+                <view class="infoNum">
+                    <text class="yuan"></text>{{extensionInfo.need}}</view>
+                <view class="infoText">需推广</view>
+            </view>
+            <view class="infoItem">
+                <view class="infoNum">
+                    <text class="yuan"></text>{{extensionInfo.num}}</view>
+                <view class="infoText">已推广</view>
+            </view>
+            <view class="clear"></view>
+        </view>
+
+        <view class="divLine"></view>
+
+        <button class="green_btn"  wx:if="{{is_driver==0}}" b indtap="salarRegis">申请成为老司机</button>
+        <button class="green_btn"  wx:if="{{is_driver==1}}" bindtap="salarRegis">兑换老司机专属优惠卷</button>
+        <button class="green_btn"  wx:if="{{is_driver==1}}" bindtap="salarRegis">发券给好友</button>
+  </view>
+</view>
+
+

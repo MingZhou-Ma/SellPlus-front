@@ -135,5 +135,11 @@ widgetsToggle1: function(t) {
   });
 },
 
+toAppoinment:function(){
+    let e=this
+  wx.navigateTo({
+    url: '../appointment/appointment?product_id='+e.data.productList.id　　// 页面 B
+  })
+}
 
 });

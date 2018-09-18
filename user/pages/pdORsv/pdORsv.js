@@ -9,18 +9,18 @@ Page({
    */
   data: {
     productList:[
-      {
-        "id":"1",
-        "pic":"http://img.my.csdn.net/uploads/201407/26/1406382861_8606.jpg",
-        "title":"ARMANI 休闲牛仔裤",
-        "intro":"版型修身，剪裁流畅简洁。优质棉面料，穿着柔软舒适。选用精湛的工艺制成，凸显品牌质量。"
-      },
-      {
-        "id":"1",
-        "pic":"http://img.my.csdn.net/uploads/201407/26/1406382839_5779.jpg",
-        "title":"Gucci logo条纹短裤",
-        "intro":"宽松直筒的版式，修饰臀腿，遮掩赘肉。"
-      },
+      // {
+      //   "id":"1",
+      //   "pic":"http://img.my.csdn.net/uploads/201407/26/1406382861_8606.jpg",
+      //   "title":"ARMANI 休闲牛仔裤",
+      //   "intro":"版型修身，剪裁流畅简洁。优质棉面料，穿着柔软舒适。选用精湛的工艺制成，凸显品牌质量。"
+      // },
+      // {
+      //   "id":"1",
+      //   "pic":"http://img.my.csdn.net/uploads/201407/26/1406382839_5779.jpg",
+      //   "title":"Gucci logo条纹短裤",
+      //   "intro":"宽松直筒的版式，修饰臀腿，遮掩赘肉。"
+      // },
     ],
       helpList:[
         {
@@ -134,6 +134,7 @@ GetHelpList:function(){
       })
     },
   })
-}
+},
+
 
 })

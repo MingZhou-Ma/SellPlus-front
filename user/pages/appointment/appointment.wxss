@@ -1,3 +1,66 @@
+
+
+.label {
+    margin: 30rpx 3% 20rpx 2%;
+    color: #777;
+    float: left;
+    border-right: 2rpx solid #eee;
+    padding: 0 3% 0 2%;
+}
+
+.priceInfo {
+    font-size: 14px;
+    width: 90%;
+    padding: 30rpx 5%;
+    background: #fff;
+}
+
+.priceItem {
+    margin-bottom: 10rpx;
+}
+
+
+/*主容器*/
+.stepper {
+	width: 80px;
+	height: 26px;
+	/*给主容器设一个边框*/
+	border: 0px solid #ccc;
+	border-radius: 3px;
+    margin:0 auto;
+    padding-top: 10px
+}
+ 
+/*加号和减号*/
+.stepper text {
+	width: 19px;
+	line-height: 26px;
+	text-align: center;
+	float: left;
+}
+ 
+/*数值*/
+.stepper input {
+	width: 40px;
+	height: 26px;
+	float: left;
+	margin: 0 auto;
+	text-align: center;
+	font-size: 12px;
+	/*给中间的input设置左右边框即可*/
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+}
+ 
+/*普通样式*/
+.stepper .normal{
+	color: black;
+}
+ 
+/*禁用样式*/
+.stepper .disabled{
+	color: #ccc;
+}
 .FormLayout {
     font-size: 28rpx;
     background: #fff;
@@ -9,8 +72,8 @@
 }
 
 .FormLayout .goodinput {
-    height: 50rpx;
-    width: 75%;
+    height: 100rpx;
+    width: 100%;
     padding: 30rpx 5%;
     color: #777;
 }

@@ -39,7 +39,7 @@
                 </navigator>
             </view>
             <view class="MenuItem">
-                <navigator class="MenuUrl" url="../../pages/verification_record/verification_record">
+                <navigator class="MenuUrl" url="../../pages/old_driver/old_driver">
                     <image class="MenuIcon" src="../../resource/images/recommend_s.png"></image>
                     <view class="MenuText">老司机送福利</view>
                 </navigator>

@@ -1,8 +1,10 @@
 {
   "pages": [
-    "user/pages/exper_sharing/exper_sharing",
 
     "user/pages/main/index",
+    "user/pages/old_driver/old_driver",
+
+    "user/pages/exper_sharing/exper_sharing",
     "user/pages/my_contact/my_contact",
     "user/pages/news/news",
     "user/pages/welfare_list/welfare_list",

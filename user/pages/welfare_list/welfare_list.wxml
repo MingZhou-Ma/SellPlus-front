@@ -3,10 +3,10 @@
 </view>
 
 <view class="coupon-list" wx:if="{{list&&list.length>0}}">
-    <block wx:for="{{list}}" wx:for-item="coupon" wx:if="{{coupon.status==0}}">
-        <view class="coupon-item coupon-status-{{coupon.status}} {{currentTab==0?'':'hide'}}" style="margin-top:20rpx;">
-            <image class="coupon-bg" src="../../resource/images/img-coupon-bg-{{coupon.status==0?0:1}}.png"></image>
-            <image class="coupon-status-icon" src="../../resource/images/img-coupon-status-icon-{{coupon.status}}.png" wx:if="{{coupon.status!=0}}"></image>
+    <block wx:for="{{list}}" wx:for-item="coupon" wx:if="{{coupon.expired==false}}">
+        <view class="coupon-item coupon-status-{{coupon.expired==false?0:1}} {{currentTab==0?'':'hide'}}" style="margin-top:20rpx;">
+            <image class="coupon-bg" src="../../resource/images/img-coupon-bg-{{coupon.expired==false?0:1}}.png"></image>
+            <image class="coupon-status-icon" src="../../resource/images/img-coupon-status-icon-{{coupon.expired==false?0:1}}.png" wx:if="{{coupon.expired==false}}"></image>
             <view class="flex-row" style="height: 100%;overflow: hidden">
                 <view class="flex-grow-0 flex-col flex-y-center flex-x-center coupon-left">
                     <view class="flex-row flex-y-bottom">
@@ -18,7 +18,7 @@
                 <view class="flex-grow-1 flex-y-center coupon-right">
                     <view style="width:100%;">
                         <view class="flex-row flex-y-center mb-10" style="margin-bottom:5rpx;">
-                            <view class="flex-grow-1" style="font-size: 12pt;">{{coupon.event_desc}}</view>
+                            <view class="flex-grow-1" style="font-size: 12pt;">{{coupon.coupon.content}}</view>
                         </view>
                         <!-- <view style="font-size: 8pt;color: #666666">{{coupon.begin_time}} ~ {{coupon.end_time}}</view> -->
                         <!-- <text class="user_coupon_font" >全场通用现金卷</text> -->
@@ -46,10 +46,10 @@
                 </view>
         </block> -->
     </block>
-    <block wx:for="{{list}}" wx:for-item="coupon" wx:if="{{coupon.status==1}}">
-        <view class="coupon-item coupon-status-{{coupon.status}} {{currentTab==1?'':'hide'}}" style="margin-top:20rpx;">
-            <image class="coupon-bg" src="../../resource/images/img-coupon-bg-{{coupon.status==0?0:1}}.png"></image>
-            <image class="coupon-status-icon" src="../../resource/images/img-coupon-status-icon-{{coupon.status}}.png" wx:if="{{coupon.status!=0}}"></image>
+    <block wx:for="{{list}}" wx:for-item="coupon" wx:if="{{coupon.expired==true}}">
+        <view class="coupon-item coupon-status-{{coupon.expired==false?0:1}} {{currentTab==1?'':'hide'}}" style="margin-top:20rpx;">
+            <image class="coupon-bg" src="../../resource/images/img-coupon-bg-{{coupon.expired==false?0:1}}.png"></image>
+            <image class="coupon-status-icon" src="../../resource/images/img-coupon-status-icon-{{coupon.expired==false?0:1}}.png" wx:if="{{coupon.expired==false}}"></image>
             <view class="flex-row" style="height: 100%;overflow: hidden">
                 <view class="flex-grow-0 flex-col flex-y-center flex-x-center coupon-left">
                     <view class="flex-row flex-y-bottom">

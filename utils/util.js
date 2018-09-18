@@ -17,7 +17,7 @@ function formatNumber(n) {
   return n[1] ? n : '0' + n
 }
 
-var rootUrl = "https://wx.meetwhy.com/"
+var rootUrl = "https://api.great-info.tech/"
 var rootDocment = rootUrl + 'api/';
 
 //修改成你的appid及appsecret

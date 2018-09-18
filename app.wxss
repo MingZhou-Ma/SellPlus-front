@@ -2517,3 +2517,11 @@ button[plain] {
 .navbar button::after {
     display: none;
 }
+.wxParse-img {
+    max-width: 100%!important;
+    width: 100%;
+}
+
+.wxParse-p .wxParse-br {
+    min-height: 1em;
+}

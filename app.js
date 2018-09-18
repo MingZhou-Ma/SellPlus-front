@@ -31,8 +31,6 @@ App({
           "code": res.code,
           "errMsg":res.errMsg
         }, function (data) {        //获取请求返回的内容
-          wx.setStorageSync('kk',data.data.uid)
-          // wx.setStorageSync("accessToken",data.data.accessToken)
           that.setUid(data.data.uid);  //存储用户的openid
           that.accessToken(data.data.accessToken);
           console.log(data)

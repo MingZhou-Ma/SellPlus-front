@@ -24,6 +24,7 @@ onLoad: function(a) {
         });
       }
     });
+    that.dateFilter()
 },
 
 bindFormSubmit: function(e) {
@@ -109,40 +110,41 @@ bindFormSubmit: function(e) {
     var that = this;
     var ctx  = wx.createCanvasContext('mycanvas');
     ctx.clearRect(0, 0, 0, 0);
-    const arr2 = ['../../resource/images/background.jpg', that.data.tempFilePaths[0]];    // 有图片海报背景图&&海报正文图片
-    const WIDTH=750;
-    const HEIGHT=1600;
-    //  绘制图片模板的 底图
+    const arr2 = ['../../resource/images/background.jpg',that.data.tempFilePaths[0],'../../resource/images/QR_code.png'];    // 有图片海报背景图&&海报正文图片
+    const WIDTH=375;
+    const HEIGHT=667;
+    //  绘制图片模板的375
     ctx.drawImage(arr2[0], 0, 0, WIDTH, HEIGHT);
-    ctx.drawImage(arr2[1], 40,40, 300, 400);
 
-    //  绘制 图片模板 的时间
-    // const TEXT_DATE = ['2', '0', '1', '8', '.', '0', '4','.','1','2'];
-    // for (let i = 0; i < TEXT_DATE.length; i++) {
-    //   if (TEXT_DATE[i] != '.') {
-    //     var path3 = `./${TEXT_DATE[i]}.png`;
-    //   } else {
-    //     var path3 = './point.png';
-    //   }
-    //   let clientx = 40 + 16 * i;
-    //   ctx.drawImage(path3, clientx, 640, 16, 32);
-    // }
-      // 绘制头像
-    ctx.save();
-    let r=32;
-    let d = r*2;
-    let cx = 102;
-    let cy = 1172;
-    ctx.arc(cx+r, cy+r, r, 0, 2 * Math.PI);
-    ctx.clip();
-    ctx.drawImage(this.data.head_img, cx, cy, d, d);
-    ctx.restore();
-    //  绘制二维码右边说明
+    ctx.drawImage(arr2[1], 0,223, 375, 265);
+    ctx.drawImage(arr2[2], 145,510, 90, 90);
+    //绘制时间
+    var time=that.dateFilter();
     ctx.setTextAlign('left')
-    ctx.setFontSize(28);
-    ctx.setFillStyle('rgba(34,34,34,.64)')
-    // ctx.fillText('长按小程序码', 250, 400);
-    // ctx.fillText(`${that.data.userName}邀你进入掌阅读好书`, 250, 450);
+    ctx.setFontSize(20);
+    ctx.fillText(time, 200, 55)
+      //绘制667   ctx.save();
+    // let r=32;
+    // let d = r*2;
+    // let cx = 102;
+    // let cy = 1172;
+    // ctx.arc(cx+r, cy+r, r, 0, 2 * Math.PI);
+    // ctx.clip();
+    // ctx.drawImage(this.data.head_img, cx, cy, d, d);
+    // ctx.restore();
+    //绘制正文
+    const CONTENT_ROW_LENGTH = 28;  // 正文 单行显示字符长度
+    let [contentLeng, contentArray, contentRows] = that.textByteLength('弈启学车的服务很好，不仅包接送，教练还很好!', CONTENT_ROW_LENGTH);
+    ctx.setTextAlign('left')
+    ctx.setFontSize(23);
+    let contentHh = 23 * 1.3;
+    for (let m = 0; m < contentArray.length; m++) {
+    ctx.fillText(contentArray[m], 25, 110 + contentHh * m);
+    }
+     //绘制二维码右边说明
+    ctx.setTextAlign('left')
+    ctx.setFontSize(20);
+    ctx.fillText("——"+that.data.userName, 265, 210);
     ctx.draw();
     //将生成好的图片保存到本地，需要延迟一会，绘制期间耗时
     setTimeout(function () {
@@ -163,6 +165,47 @@ bindFormSubmit: function(e) {
       });
     }, 200);
   },
+  //
+  textByteLength:function(text,num){  // text为传入的文本  num为单行显示的字节长度
+    let strLength = 0; // text byte length
+    let rows=1;
+    let str=0;
+    let arr=[];
+    for (let j = 0; j < text.length; j++) {
+          if (text.charCodeAt(j) > 255) {
+            strLength += 2;
+            if (strLength > rows * num) {
+              strLength++;
+              arr.push(text.slice(str, j));
+              str = j;
+              rows++;
+            }
+          } else {
+            strLength++;
+            if (strLength > rows * num) {
+              arr.push(text.slice(str, j));
+              str = j;
+              rows++;
+            }
+          }
+      }
+    arr.push(text.slice(str, text.length));
+    return [strLength, arr, rows]   //  [处理文字的总字节长度，每行显示内容的数组，行数]
+  },
+  //将时间戳转换为一个时间数字组成的数组
+  dateFilter:function(){
+
+    var timestamp = Date.parse(new Date());
+    timestamp = timestamp / 1000;
+    console.log("当前时间戳为：" + timestamp);
+ 
+//获取当前时间
+    var n = timestamp * 1000;
+    var date = new Date(n);
+    console.log(date.toDateString());
+    return date.toDateString()
+  },
+
   //点击保存到相册
   baocun:function(){
     var that = this

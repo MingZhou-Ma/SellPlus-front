@@ -161,7 +161,7 @@
 
 
     <view class="callUser">
-        <form bindsubmit="ToOpAddorder" reportSubmit="true" >
+        <form bindsubmit="toAppoinment" reportSubmit="true" >
             <button class="addbargain" formType="submit" type="default">
                 <view class="btnText">预约顾问</view>
             </button>

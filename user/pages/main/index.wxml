@@ -7,8 +7,8 @@
         <block wx:for="{{swiperList}}" wx:key="id">
             <navigator url="{{item}}">
                 <swiper-item>
-                    <!-- <image mode="aspectFill" src="{{rootUrl+item}}" style="width:100%;height:100%;"></image> -->
-                    <image mode="aspectFill" src="{{item}}" style="width:100%;height:100%;"></image>
+                    <image mode="aspectFill" src="{{rootUrl+item}}" style="width:100%;height:100%;"></image>
+                    <!-- <image mode="aspectFill" src="{{item}}" style="width:100%;height:100%;"></image> -->
 
                     <!-- 要设定图片格式，style="width:100%;height:266rpx;" -->
                 </swiper-item>
@@ -70,14 +70,27 @@
         </navigator>
     </view>
     <view class="ActivityList">
-        <view class="ActivityItem" wx:for="{{productList}}">
+        <view class="ActivityItem" wx:if="{{productList[0]}}">
             <navigator url="../../pages/product_detail/product_detail?activityid={{item.id}}">
-                <image class="ActivityPic" mode="aspectFill" src="{{item.pic}}"></image>
+                <image class="ActivityPic" mode="aspectFill" src="{{rootUrl+productList[0].picList[0]}}"></image>
                 
-                    <view class="ActivityTitle">{{item.title}}</view>
+                    <view class="ActivityTitle">{{productList[0].name}}</view>
                 
                 <view class="productLeft">
-                    <view class="productIntro">{{item.intro}}</view>
+                    <view class="productIntro">{{productList[0].intro}}</view>
+                </view>
+            </navigator>
+        </view>
+    </view>
+    <view class="ActivityList">
+        <view class="ActivityItem" wx:if="{{productList[1]}}">
+            <navigator url="../../pages/product_detail/product_detail?activityid={{item.id}}">
+                <image class="ActivityPic" mode="aspectFill" src="{{rootUrl+productList[1].picList[0]}}"></image>
+                
+                    <view class="ActivityTitle">{{productList[1].name}}</view>
+                
+                <view class="productLeft">
+                    <view class="productIntro">{{productList[1].intro}}</view>
                 </view>
             </navigator>
         </view>
@@ -94,7 +107,7 @@
 <view class="ActivityList">
     <view class="ActivityItem" wx:for="{{infoList}}">
         <navigator url="../../pages/news/news?newsid={{item.id}}">
-            <image class="ActivityPic" mode="aspectFill" src="{{item.pic}}"></image>
+            <image class="ActivityPic" mode="aspectFill" src="{{rootUrl+item.pic}}"></image>
         
                 <view class="infoTitle">{{item.title}}</view>
             
