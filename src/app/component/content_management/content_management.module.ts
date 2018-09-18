@@ -16,6 +16,13 @@ import  { ImageViewerModule}            from '../../shared/image-viewer/image-vi
 import{NewsComponent} from './news/news.component';
 import { DatePipe } from '@angular/common';
 
+import {CouponService} from '../../service/coupon.service'
+import {Coupon_ListComponent} from"./coupon_list/coupon_list.component"
+
+import{NewCouponComponent} from "./new_coupon/new_coupon.component"
+import{Coupon_CancleComponent} from "./coupon_cancle/coupon_cancle.component"
+import {WriteOff_ListComponent} from "./writeoff_list/writeoff_list.component"
+
 @NgModule({
   imports: [
     CommonModule,
@@ -30,12 +37,18 @@ import { DatePipe } from '@angular/common';
     BannerComponent,
     NewsComponent,
     Content_ManagementComponent,
+    NewCouponComponent,
+    Coupon_ListComponent,
+    Coupon_CancleComponent,
+    WriteOff_ListComponent
   ],
   exports: [
   ],
   providers: [
     DatePipe,
     Content_ManagementService,
-    DialogService]
+    DialogService,
+    CouponService,
+  ]
 })
 export class Content_ManagementModule { }

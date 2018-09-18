@@ -168,14 +168,14 @@ export class MainComponent implements OnInit {
       "name": "新建券",
       "keyWord": "yhtj",
       "icon": "fa-pencil-square-o",
-      "url": "/home/productInfo/add_product"
+      "url": "/home/content_management/new_coupon"
     }, {
       "id": "38",
       "parentId": "15",
       "name": "券列表",
       "keyWord": "yhlb",
       "icon": "fa-list-alt",
-      "url": "/home/productInfo/productList"
+      "url": "/home/content_management/coupon_list"
     }, 
     {
       "id": "38",
@@ -183,7 +183,7 @@ export class MainComponent implements OnInit {
       "name": "券核销",
       "keyWord": "yhlb",
       "icon": "fa-list-alt",
-      "url": "/home/productInfo/productList"
+      "url": "/home/content_management/coupon_cancle"
     }, 
     {
       "id": "38",
@@ -191,7 +191,7 @@ export class MainComponent implements OnInit {
       "name": "券核销记录",
       "keyWord": "yhlb",
       "icon": "fa-list-alt",
-      "url": "/home/productInfo/productList"
+      "url": "/home/content_management/writeoff_list"
     }, 
   ]
 },

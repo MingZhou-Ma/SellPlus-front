@@ -1,0 +1,99 @@
+
+<div class="c-content-inner" *ngIf="status">
+    <button type="button" class="btn btn-danger c-mb15" (click)="tomodel()" >显示优惠券模板列表</button>
+
+    <div class="row">
+        <div class="col-md-12">
+            <p class="c-line-title">优惠券实体列表</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th class="text-center c-w-1">序号</th>
+                        <th class="text-center c-w-2">获取者</th>
+                        <th class="text-center c-w-2">券描述</th>
+                        <th class="text-center c-w-2">券码</th>
+                        <th class="text-center c-w-2">发卷时间</th>
+                        <th class="text-center c-w-2">金额</th>
+                        <th class="text-center c-w-2">是否核销</th>
+                        <th class="text-center c-w-2">备注</th>
+
+                        <th class="text-center c-w-2">操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of ojblist.content;let i = index">
+                    <td class="text-center" style="display:table-cell; vertical-align:middle">{{i+1}}</td>
+                    <td class="text-center" style="display:table-cell; vertical-align:middle">陈崇维老板</td>
+                    <td class="text-center" style="display:table-cell; vertical-align:middle">{{data.coupon.content}}</td>
+                    <td class="text-center" style="display:table-cell; vertical-align:middle">{{data.code}}</td>
+                    <td class="text-center" style="display:table-cell; vertical-align:middle">{{data.generalTime}}</td>
+                    <td class="text-center" style="display:table-cell; vertical-align:middle">{{data.amount}}</td>
+                    <td class="text-center" style="display:table-cell; vertical-align:middle">{{data.expired}}</td>
+                    <td class="text-center" style="display:table-cell; vertical-align:middle">{{data.note}}</td>
+
+                    <!-- <td class="text-center">{{data.intro}}</td> -->
+                    <!-- <td class="text-center">
+                        <button class="btn btn-info btn-sm" ><i class="fa fa-search fa-fw"></i> 查看</button>
+                        <button class="btn btn-success btn-sm"><i class="fa fa-pencil fa-fw"></i> 编辑</button>
+                        <button class="btn btn-danger btn-sm" type="button" (click)="deletenews(data.id)">删除</button>
+                    </td> -->
+                    </tr>
+                </tbody>
+            </table>
+            <!-- <c-http-pagination #hp [url]="url" method="post" [param]="param" [pageList]="pageList" (onDataChanged)="onDataChanged($event)"></c-http-pagination> -->
+        </div>
+    </div>
+</div>
+
+<div class="c-content-inner" *ngIf="status==false">
+    <button type="button" class="btn btn-danger c-mb15" (click)="toojb()" >显示已发放优惠券列表</button>
+
+        <div class="row">
+            <div class="col-md-12">
+                <p class="c-line-title">优惠券模板列表</p>
+            </div>
+        </div>
+    
+        <div class="row">
+            <div class="col-md-12">
+    
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="text-center c-w-1">序号</th>
+                            <th class="text-center c-w-2">券描述</th>
+                            <th class="text-center c-w-2">金额</th>
+                            <th class="text-center c-w-2">数量</th>
+                            <th class="text-center c-w-2">是否为高级别优惠券</th>
+                            <th class="text-center c-w-2">开始时间</th>
+                            <th class="text-center c-w-2">结束时间</th>
+                            <th class="text-center c-w-2">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let data of modellist.content;let i = index">
+                        <td class="text-center" style="display:table-cell; vertical-align:middle">{{i+1}}</td>
+                        <td class="text-center" style="display:table-cell; vertical-align:middle">{{data.content}}</td>
+                        <td class="text-center" style="display:table-cell; vertical-align:middle">{{data.amount}}</td>
+                        <td class="text-center" style="display:table-cell; vertical-align:middle">{{data.num}}</td>
+                        <td class="text-center" style="display:table-cell; vertical-align:middle">{{data.finite}}</td>
+                        <td class="text-center" style="display:table-cell; vertical-align:middle">{{data.startDate}}</td>
+                        <td class="text-center" style="display:table-cell; vertical-align:middle">{{data.endDate}}</td>
+
+                        <td class="text-center">
+                            <button class="btn btn-danger btn-sm" type="button" (click)="deletemodel(data.id)">删除</button>
+                        </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- <c-http-pagination #hp [url]="url" method="post" [param]="param" [pageList]="pageList" (onDataChanged)="onDataChanged($event)"></c-http-pagination> -->
+            </div>
+        </div>
+    </div>
+    

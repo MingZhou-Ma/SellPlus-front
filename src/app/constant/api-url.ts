@@ -1,7 +1,9 @@
 // api
 export const base = "https://api.great-info.tech/"
+// export const base = "https://wx.meetwhy.com/"
 export const prefix = base + 'api/mer/'
 export const public_prefix = base + "api/pub/"
+export const public_sell = base + "api/sell/"
 export const api = {
 
   login: prefix + 'login',                  //登录
@@ -23,5 +25,13 @@ export const api = {
   getnewslist:public_prefix+"listArticle",
   addnews:prefix+"addArticle",
   deletenews:prefix+"delArticle",
+  //优惠劵相关
+  addCouponModel:prefix+"addCouponModel",
+  getCouponModel:prefix+"getCouponModel",//获取全部的优惠卷模板
+  getCouponObj:prefix+"getCouponObj",
+  delCouponModel:prefix+"delCouponModel",
+  writeOffCoupons:prefix+"writeOffCoupons",
+  writeOffHistory:public_sell+"writeOffHistory",
+
 };
 
