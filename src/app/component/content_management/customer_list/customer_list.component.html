@@ -1,0 +1,46 @@
+
+<div class="c-content-inner">
+
+    <div class="row">
+        <div class="col-md-12">
+            <p class="c-line-title">用户列表</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th class="text-center c-w-1">序号</th>
+                        <th class="text-center c-w-2">微信名</th>
+                        <th class="text-center c-w-2">电话号码</th>
+                        <th class="text-center c-w-2">实名</th>
+                        <th class="text-center c-w-2">类型</th>
+                        <th class="text-center c-w-2">所属销售</th>
+                        <th class="text-center c-w-2">所属销售渠道</th>
+                        <th class="text-center c-w-2">操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of customerlist.content;let i = index">
+                    <td class="text-center" style="display:table-cell; vertical-align:middle">{{i+1}}</td>
+                    <td class="text-center" style="display:table-cell; vertical-align:middle">黄信维</td>
+                    <td class="text-center" style="display:table-cell; vertical-align:middle">{{data.phone}}</td>
+                    <td class="text-center" style="display:table-cell; vertical-align:middle">{{data.name}}</td>
+                    <td class="text-center" style="display:table-cell; vertical-align:middle">{{data.frequenter}}</td>
+                    <td class="text-center" style="display:table-cell; vertical-align:middle">{{data.seller.name}}</td>
+                    <td class="text-center" style="display:table-cell; vertical-align:middle">{{data.sellerChannel}}</td>
+                    <td class="text-center">
+                        <!-- <button class="btn btn-info btn-sm" type="button" (click)="addoldcustomer(data.id)" ><i class="fa fa-search fa-fw"></i> 标注为老客户</button> -->
+                        <button class="btn btn-success btn-sm" type="button" (click)="addoldcustomer(data.id)"><i class="fa fa-pencil fa-fw"></i> 标注为老客户</button>
+                        <!-- <button class="btn btn-danger btn-sm" type="button" (click)="deletenews(data.id)">删除</button> -->
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
+            <!-- <c-http-pagination #hp [url]="url" method="post" [param]="param" [pageList]="pageList" (onDataChanged)="onDataChanged($event)"></c-http-pagination> -->
+        </div>
+    </div>
+</div>

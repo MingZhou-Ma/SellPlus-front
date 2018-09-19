@@ -126,4 +126,28 @@ export class CouponService {
         }, function(successful,data,res){}
     )
     }
+
+
+    //获取用户列表
+    GetMyCustomer(getdata:Function){
+        let formData=new FormData();
+        let accessToken=localStorage.getItem('accessToken')
+        // formData.append('start',"0")
+        // formData.append('num',"999")
+        formData.append('token',accessToken)
+        this.httpService.post(api.getMyCustomer,formData,function(successful,data,res){
+            console.log(data['code'])
+            let errCode=data['code']
+            if(errCode==code.success)
+            {
+                getdata(data['code'],data['data'])
+            }
+            else{
+                
+            }
+        }, function(successful,data,res){}
+    )
+    }
+
+
 }

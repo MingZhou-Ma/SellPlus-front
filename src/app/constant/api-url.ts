@@ -31,7 +31,8 @@ export const api = {
   getCouponObj:prefix+"getCouponObj",
   delCouponModel:prefix+"delCouponModel",
   writeOffCoupons:prefix+"writeOffCoupons",
-  writeOffHistory:public_sell+"writeOffHistory",
-
+  writeOffHistory:prefix+"writeOffHistory",
+  //用户资料相关
+  getMyCustomer:prefix+"getMyCustomer",
 };
 

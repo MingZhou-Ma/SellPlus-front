@@ -234,7 +234,7 @@ export class MainComponent implements OnInit {
       "name": "用户列表",
       "keyWord": "yhtj",
       "icon": "fa-pencil-square-o",
-      "url": "/home/productInfo/add_product"
+      "url": "/home/content_management/customer_list"
     },
   ]
 },

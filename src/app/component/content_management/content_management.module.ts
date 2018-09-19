@@ -22,6 +22,7 @@ import {Coupon_ListComponent} from"./coupon_list/coupon_list.component"
 import{NewCouponComponent} from "./new_coupon/new_coupon.component"
 import{Coupon_CancleComponent} from "./coupon_cancle/coupon_cancle.component"
 import {WriteOff_ListComponent} from "./writeoff_list/writeoff_list.component"
+import{Customer_ListComponent} from "./customer_list/customer_lis.component"
 
 @NgModule({
   imports: [
@@ -40,7 +41,8 @@ import {WriteOff_ListComponent} from "./writeoff_list/writeoff_list.component"
     NewCouponComponent,
     Coupon_ListComponent,
     Coupon_CancleComponent,
-    WriteOff_ListComponent
+    WriteOff_ListComponent,
+    Customer_ListComponent
   ],
   exports: [
   ],

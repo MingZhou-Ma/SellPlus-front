@@ -8,6 +8,7 @@ import{NewCouponComponent} from "./new_coupon/new_coupon.component";
 import {Coupon_ListComponent} from"./coupon_list/coupon_list.component"
 import{Coupon_CancleComponent} from "./coupon_cancle/coupon_cancle.component"
 import {WriteOff_ListComponent} from "./writeoff_list/writeoff_list.component"
+import{Customer_ListComponent} from "./customer_list/customer_lis.component"
 const content_managementRoutes: Routes = [
     {
         path: '', component: Content_ManagementComponent,
@@ -35,6 +36,10 @@ const content_managementRoutes: Routes = [
             {
               path:'writeoff_list',
               component:WriteOff_ListComponent
+            },
+            {
+              path:'customer_list',
+              component:Customer_ListComponent
             }
         ]
     }

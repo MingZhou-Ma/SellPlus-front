@@ -3,7 +3,7 @@
 
     <div class="row">
         <div class="col-md-12">
-            <p class="c-line-title">优惠券实体列表</p>
+            <p class="c-line-title">券核销记录</p>
         </div>
     </div>
 
@@ -14,27 +14,22 @@
                 <thead>
                     <tr>
                         <th class="text-center c-w-1">序号</th>
-                        <th class="text-center c-w-2">获取者</th>
-                        <th class="text-center c-w-2">券描述</th>
-                        <th class="text-center c-w-2">券码</th>
-                        <th class="text-center c-w-2">发卷时间</th>
-                        <th class="text-center c-w-2">金额</th>
-                        <th class="text-center c-w-2">是否核销</th>
-                        <th class="text-center c-w-2">备注</th>
-
-                        <th class="text-center c-w-2">操作</th>
+                        <th class="text-center c-w-2">券ID</th>
+                        <th class="text-center c-w-2">券类型</th>
+                        <th class="text-center c-w-2">使用人</th>
+                        <th class="text-center c-w-2">核销人</th>
+                        <th class="text-center c-w-2">核销时间</th>
+                        <!-- <th class="text-center c-w-2">操作</th> -->
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let data of ojblist.content;let i = index">
+                    <tr *ngFor="let data of canclelist.content;let i = index">
                     <td class="text-center" style="display:table-cell; vertical-align:middle">{{i+1}}</td>
-                    <td class="text-center" style="display:table-cell; vertical-align:middle">陈崇维老板</td>
-                    <td class="text-center" style="display:table-cell; vertical-align:middle">{{data.coupon.content}}</td>
-                    <td class="text-center" style="display:table-cell; vertical-align:middle">{{data.code}}</td>
-                    <td class="text-center" style="display:table-cell; vertical-align:middle">{{data.generalTime}}</td>
-                    <td class="text-center" style="display:table-cell; vertical-align:middle">{{data.amount}}</td>
-                    <td class="text-center" style="display:table-cell; vertical-align:middle">{{data.expired}}</td>
-                    <td class="text-center" style="display:table-cell; vertical-align:middle">{{data.note}}</td>
+                    <td class="text-center" style="display:table-cell; vertical-align:middle">{{data.couponObj.code}}</td>
+                    <td class="text-center" style="display:table-cell; vertical-align:middle">{{data.couponObj.coupon.content}}</td>
+                    <td class="text-center" style="display:table-cell; vertical-align:middle">{{data.own}}</td>
+                    <td class="text-center" style="display:table-cell; vertical-align:middle">{{data.seller.name}}</td>
+                    <td class="text-center" style="display:table-cell; vertical-align:middle">{{data.date}}</td>
 
                     <!-- <td class="text-center">{{data.intro}}</td> -->
                     <!-- <td class="text-center">
