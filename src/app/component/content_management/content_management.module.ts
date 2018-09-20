@@ -23,6 +23,8 @@ import{NewCouponComponent} from "./new_coupon/new_coupon.component"
 import{Coupon_CancleComponent} from "./coupon_cancle/coupon_cancle.component"
 import {WriteOff_ListComponent} from "./writeoff_list/writeoff_list.component"
 import{Customer_ListComponent} from "./customer_list/customer_lis.component"
+import{Sharing_SettingComponent}from"./sharing_setting/sharing_setting.component"
+import{Seller_ListComponent}from"./seller_list/seller_list.component"
 
 @NgModule({
   imports: [
@@ -42,7 +44,9 @@ import{Customer_ListComponent} from "./customer_list/customer_lis.component"
     Coupon_ListComponent,
     Coupon_CancleComponent,
     WriteOff_ListComponent,
-    Customer_ListComponent
+    Customer_ListComponent,
+    Sharing_SettingComponent,
+    Seller_ListComponent
   ],
   exports: [
   ],

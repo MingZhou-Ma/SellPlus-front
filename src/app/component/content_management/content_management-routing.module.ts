@@ -9,6 +9,8 @@ import {Coupon_ListComponent} from"./coupon_list/coupon_list.component"
 import{Coupon_CancleComponent} from "./coupon_cancle/coupon_cancle.component"
 import {WriteOff_ListComponent} from "./writeoff_list/writeoff_list.component"
 import{Customer_ListComponent} from "./customer_list/customer_lis.component"
+import{Sharing_SettingComponent}from"./sharing_setting/sharing_setting.component"
+import{Seller_ListComponent}from"./seller_list/seller_list.component"
 const content_managementRoutes: Routes = [
     {
         path: '', component: Content_ManagementComponent,
@@ -40,6 +42,14 @@ const content_managementRoutes: Routes = [
             {
               path:'customer_list',
               component:Customer_ListComponent
+            },
+            {
+              path:'sharing_setting',
+              component:Sharing_SettingComponent
+            },
+            {
+              path:'seller_list',
+              component:Seller_ListComponent
             }
         ]
     }

@@ -34,5 +34,8 @@ export const api = {
   writeOffHistory:prefix+"writeOffHistory",
   //用户资料相关
   getMyCustomer:prefix+"getMyCustomer",
+  //销售相关
+  addSeller:prefix+"addSeller",
+  listSeller:prefix+"listSeller",
 };
 

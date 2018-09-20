@@ -149,5 +149,42 @@ export class CouponService {
     )
     }
 
+    //增加销售
+    AddSeller(body:any,result:Function){
+        let formData=new FormData();
+        formData.append("account",body.account)
+        formData.append("name",body.name)
+        formData.append("",body.name)
+        formData.append("phone",body.phone)
+        formData.append("wechat",body.wechat)
+        formData.append("pic",body.pic)
+        formData.append("intro",body.intro)
+        let accessToken=localStorage.getItem('accessToken')
+        formData.append('token',accessToken)
+        this.httpService.post(api.addSeller,formData,function(successful,data,res){
+            console.log(data['code'])
+            let errCode=data['code']
+            result(errCode)
+        })
+    }
+    Seller_List(getdata:Function){
+        let formData=new FormData();
+        let accessToken=localStorage.getItem('accessToken')
+        formData.append('start',"0")
+        formData.append('num',"999")
+        formData.append('token',accessToken)
+        this.httpService.post(api.listSeller,formData,function(successful,data,res){
+            console.log(data['code'])
+            let errCode=data['code']
+            if(errCode==code.success)
+            {
+                getdata(data['code'],data['data'])
+            }
+            else{
+                
+            }
+        }, function(successful,data,res){}
+    )
+    }
 
 }

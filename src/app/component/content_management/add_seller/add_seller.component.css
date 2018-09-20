@@ -1,0 +1,38 @@
+/* .card-body {
+    background-color: white;
+    min-height: 800px;
+  } */
+  
+  img#xFile {
+    display: block;
+    width: 120px;
+    height: 200px;
+    object-fit: cover;
+    cursor: pointer;
+  }
+  
+  .img-edge {
+    display: block;
+    height: 120px;
+    width: 200px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: calc(0.25rem - 1px);
+  }
+  
+  /* input#xFile {
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    height: 120px;
+    width: 200px;
+    opacity: 0;
+    cursor: pointer;
+  } */
+  
+  .imgissue {
+    color: #9e9e9e;
+    display: block;
+  }
+  

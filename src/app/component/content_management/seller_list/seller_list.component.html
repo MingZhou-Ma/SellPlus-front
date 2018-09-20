@@ -1,0 +1,47 @@
+
+<div class="c-content-inner">
+    <div class="row">
+        <div class="col-md-12">
+            <p class="c-line-title">销售列表</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th class="text-center c-w-1">序号</th>
+                        <!-- <th class="text-center c-w-1">头像</th> -->
+                        <th class="text-center c-w-2">名字</th>
+                        <th class="text-center c-w-2">电话</th>
+                        <th class="text-center c-w-2">微信</th>
+                        <!-- <th class="text-center c-w-2">操作</th> -->
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of sellerlist.content;let i = index">
+                    <td class="text-center" style="display:table-cell; vertical-align:middle">{{i+1}}</td>
+                    <!-- <td class="text-center" style="display:table-cell; vertical-align:middle">
+                    <img class="card-img-top"   src="{{data.pic}}"  style="width:100%;height:80%">                        
+                    </td> -->
+                    <td class="text-center" style="display:table-cell; vertical-align:middle">{{data.name}}</td>
+                    <td class="text-center" style="display:table-cell; vertical-align:middle">{{data.phone}}</td>
+                    <td class="text-center" style="display:table-cell; vertical-align:middle">{{data.wechat}}</td>
+
+                    <!-- <td class="text-center">{{data.intro}}</td> -->
+                    <!-- <td class="text-center">
+                        <button class="btn btn-info btn-sm" ><i class="fa fa-search fa-fw"></i> 查看</button>
+                        <button class="btn btn-success btn-sm"><i class="fa fa-pencil fa-fw"></i> 编辑</button>
+                        <button class="btn btn-danger btn-sm" type="button" (click)="deletenews(data.id)">删除</button>
+                    </td> -->
+                    </tr>
+                </tbody>
+            </table>
+            <!-- <c-http-pagination #hp [url]="url" method="post" [param]="param" [pageList]="pageList" (onDataChanged)="onDataChanged($event)"></c-http-pagination> -->
+        </div>
+    </div>
+</div>
+
+    

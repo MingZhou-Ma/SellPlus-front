@@ -150,7 +150,7 @@ export class MainComponent implements OnInit {
         "name": "销售列表",
         "keyWord": "yhlb",
         "icon": "fa-list-alt",
-        "url": "/home/productInfo/productList"
+        "url": "/home/content_management/seller_list"
       }, 
     ]
 },
@@ -216,7 +216,7 @@ export class MainComponent implements OnInit {
       "name": "学车心得分享管理",
       "keyWord": "yhlb",
       "icon": "fa-list-alt",
-      "url": "/home/productInfo/productList"
+      "url": "/home/content_management/sharing_setting"
     }, 
   ]
 },

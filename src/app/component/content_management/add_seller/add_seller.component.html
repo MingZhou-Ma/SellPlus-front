@@ -1,0 +1,43 @@
+<div class="c-content-inner">
+    <h3>基本信息</h3>
+
+    <br>
+    <h5>头像</h5>
+         <app-img-upload (coverChange)="getimg($event)"></app-img-upload> 
+         <!-- <img [src]="defaultImg" width="150px" height="150px" (click)="selectFile()">  -->
+         <!-- <button  type="button" class="btn btn-outline-primary float-right ml-2" (click)="selectFile()">发布</button> -->
+
+          <!-- <input id="xFile" type="file" (change)="selectFile()" accept=".png, .jpg, .jpeg" /> -->
+          <!-- <div id="xFile" style="background-image: url({{defaultImg}});background-size: cover"></div> -->
+
+    
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label"><strong>名字</strong></label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control"  placeholder="请填写商品名"
+          [(ngModel)]="event.name">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label"><strong>账号</strong></label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control"  placeholder="请填写商品价格"
+          [(ngModel)]="event.account">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-sm-2 col-form-label"><strong>商品简介</strong></label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control"  placeholder="请填写商品简介"
+          [(ngModel)]="event.intro">
+      </div>
+    </div>
+
+    <br>
+<br>
+
+    <ng-container >
+      <button  type="button" class="btn btn-outline-primary float-right ml-1" (click)="public()">完成</button>
+    </ng-container>
+    <br>
+</div>
