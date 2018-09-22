@@ -143,7 +143,7 @@ export class MainComponent implements OnInit {
         "name": "增加销售",
         "keyWord": "yhtj",
         "icon": "fa-pencil-square-o",
-        "url": "/home/productInfo/add_product"
+        "url": "/home/content_management/add_seller"
       }, {
         "id": "38",
         "parentId": "15",
@@ -209,7 +209,7 @@ export class MainComponent implements OnInit {
       "name": "老司机活动管理",
       "keyWord": "yhtj",
       "icon": "fa-pencil-square-o",
-      "url": "/home/productInfo/add_product"
+      "url": "/home/content_management/driver_setting"
     }, {
       "id": "38",
       "parentId": "15",

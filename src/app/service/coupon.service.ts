@@ -154,7 +154,7 @@ export class CouponService {
         let formData=new FormData();
         formData.append("account",body.account)
         formData.append("name",body.name)
-        formData.append("",body.name)
+        formData.append("sellerKey",body.sellerKey)
         formData.append("phone",body.phone)
         formData.append("wechat",body.wechat)
         formData.append("pic",body.pic)

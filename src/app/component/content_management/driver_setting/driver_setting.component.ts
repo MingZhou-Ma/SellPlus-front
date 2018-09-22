@@ -13,12 +13,12 @@ import { DatePipe } from '@angular/common';
 import {Content_ManagementService} from '../../../service/content_management.service'
 
 @Component({
-  selector: 'c-sharing_setting',
-  templateUrl: './sharing_setting.component.html',
-  styleUrls:['./sharing_setting.component.css']
+  selector: 'c-driver_Setting',
+  templateUrl: './driver_Setting.component.html',
+  styleUrls:['./driver_Setting.component.css']
 })
 
-export class Sharing_SettingComponent {
+export class Driver_SettingComponent {
     event: any = {};
     status:boolean=false;
     dateTime: Date;
@@ -37,7 +37,7 @@ export class Sharing_SettingComponent {
 
     ) 
   {
-    this.appService.titleEventEmitter.emit("老司机活动管理");
+    this.appService.titleEventEmitter.emit("心得分享管理");
   }
 
   ngOnInit(){
@@ -50,9 +50,9 @@ export class Sharing_SettingComponent {
   setmaininfo(){
     let that = this;
     let formData=new FormData();
-    formData.append("coupon1",that.event.coupon1)
-    formData.append("coupon2",that.event.coupon1)
-    formData.append("promotion",that.event.promotion)
+    formData.append("diaryReadNum",that.event.diaryReadNum)
+    formData.append("diaryCoupon",that.event.diaryCoupon)
+    formData.append("diaryIntervals",that.event.diaryIntervals)
     if(that.event=="null"){
         const toastCfg = new ToastConfig(ToastType.ERROR, '', '请先填写信息', 3000);
         that.toastService.toast(toastCfg);
@@ -69,11 +69,8 @@ export class Sharing_SettingComponent {
 }
 
 
-getCouponChange1(){
-    console.log(this.event.coupon1)
-}
-getCouponChange2(){
-    console.log(this.event.coupon2)
+getCouponChange(){
+    console.log(this.event.diaryCoupon)
 }
 
 

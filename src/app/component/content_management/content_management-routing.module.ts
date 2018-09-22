@@ -11,6 +11,8 @@ import {WriteOff_ListComponent} from "./writeoff_list/writeoff_list.component"
 import{Customer_ListComponent} from "./customer_list/customer_lis.component"
 import{Sharing_SettingComponent}from"./sharing_setting/sharing_setting.component"
 import{Seller_ListComponent}from"./seller_list/seller_list.component"
+import{Add_SellerComponent}from"./add_seller/add_seller.component"
+import{Driver_SettingComponent}from"./driver_setting/driver_setting.component"
 const content_managementRoutes: Routes = [
     {
         path: '', component: Content_ManagementComponent,
@@ -50,7 +52,15 @@ const content_managementRoutes: Routes = [
             {
               path:'seller_list',
               component:Seller_ListComponent
-            }
+            },
+            {
+              path:'add_seller',
+              component:Add_SellerComponent
+            },
+            {
+              path:'driver_setting',
+              component:Driver_SettingComponent
+            },
         ]
     }
 ]

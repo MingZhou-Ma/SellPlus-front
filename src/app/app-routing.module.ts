@@ -11,7 +11,10 @@ import{AdminLoginGuard} from './service/guard/admin-login-guard.service';
  * app路由
  */
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '',   // 初始路由重定向
+    redirectTo: '/login', 
+    pathMatch: 'full'   // 必须要设置
+  },
   { 
      path: 'login',  
      loadChildren: 'app/login/login.module#LoginModule',
@@ -20,11 +23,12 @@ const appRoutes: Routes = [
   { 
      path: 'home',  
      loadChildren: 'app/component/main/main.module#MainModule',
-    // canActivate:[AdminLoginGuard]
+     canActivate:[AdminLoginGuard]
   },
   {
-     path:'**',
-     component: PageNotFoundComponent
+     path:'**',   //错误路由重定向
+     component: PageNotFoundComponent,
+     pathMatch: 'full'  // 必须要设置
   },
 //  {
 //    path:'register',

@@ -63,17 +63,12 @@ export class LoginComponent implements OnInit {
     this.loginService.login(this.loginForm.value.account, this.loginForm.value.password,function(errCode){
       if(errCode==code.success){
         that.router.navigate(['/home']);
-
       }
       else{
         const toastCfg = new ToastConfig(ToastType.ERROR, '', '密码或账户出错', 3000);
         that.toastService.toast(toastCfg);
       }
     });
-
-    
-    status=localStorage.getItem('isLogin')
-    console.log(localStorage.getItem('isLogin'))
 
 
     // this.router.navigate(['/home']);
@@ -82,6 +77,7 @@ export class LoginComponent implements OnInit {
   register(){
     const alertCfg = new AlertConfig(AlertType.INFO, '您好', '请联系王先生：137XXXXXXXX或微信：XXXXXXX');
     this.modalService.alert(alertCfg);
+
 //    this.router.navigate(['register']);
   }
 

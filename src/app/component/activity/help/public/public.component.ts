@@ -72,8 +72,6 @@ public(){
             that.toastService.toast(toastCfg);
         }
     })
-
-
 }
 getProductChange(){
   console.log(this.event.id)

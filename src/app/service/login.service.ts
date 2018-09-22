@@ -1,5 +1,5 @@
 import { Router } from '@angular/router';
-import { code } from '../constant/status-code';
+import { code} from '../constant/status-code';
 import { api } from '../constant/api-url';
 import { HttpService } from '../shared/http/http.service';
 import { Injectable } from '@angular/core';
@@ -44,9 +44,9 @@ export class LoginService {
         if (errCode == code.success) 
         {
           console.log(`管理员登录成功`);
-          console.log("token: "+data['data']['accessToken']);
           localStorage.setItem("accessToken",data['data']['accessToken']);
-          localStorage.setItem('isLogin', 'yes');        }
+          localStorage.setItem('isLogin', 'yes');
+        }
          else 
          {
           localStorage.setItem('isLogin', 'no');

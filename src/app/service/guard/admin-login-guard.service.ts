@@ -14,16 +14,6 @@ export class AdminLoginGuard implements CanActivate, CanActivateChild {
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | boolean {
 
-    return this.checkLogin();
-    // return true;
-  }
-
-  canActivateChild(childRoute: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | boolean {
-    return this.canActivate(childRoute, state);
-  }
-
-  checkLogin(): Observable<boolean> | boolean {
-    // console.log('isLogin',localStorage.getItem('isLogin'));
     if (localStorage.getItem('isLogin') === 'yes') {
       return true;
     }
@@ -32,5 +22,19 @@ export class AdminLoginGuard implements CanActivate, CanActivateChild {
     return false;
     }
   }
+
+  canActivateChild(childRoute: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> | boolean {
+    return this.canActivate(childRoute, state);
+  }
+
+  // checkLogin(): Observable<boolean> | boolean {
+  //   if (localStorage.getItem('isLogin') === 'yes') {
+  //     return true;
+  //   }
+  //   else{
+  //   this.router.navigate(['/login']);
+  //   return false;
+  //   }
+  // }
 
 }

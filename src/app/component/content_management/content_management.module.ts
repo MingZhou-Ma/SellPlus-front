@@ -25,6 +25,8 @@ import {WriteOff_ListComponent} from "./writeoff_list/writeoff_list.component"
 import{Customer_ListComponent} from "./customer_list/customer_lis.component"
 import{Sharing_SettingComponent}from"./sharing_setting/sharing_setting.component"
 import{Seller_ListComponent}from"./seller_list/seller_list.component"
+import{Add_SellerComponent}from"./add_seller/add_seller.component"
+import{Driver_SettingComponent}from"./driver_setting/driver_setting.component"
 
 @NgModule({
   imports: [
@@ -46,7 +48,9 @@ import{Seller_ListComponent}from"./seller_list/seller_list.component"
     WriteOff_ListComponent,
     Customer_ListComponent,
     Sharing_SettingComponent,
-    Seller_ListComponent
+    Seller_ListComponent,
+    Add_SellerComponent,
+    Driver_SettingComponent,
   ],
   exports: [
   ],
