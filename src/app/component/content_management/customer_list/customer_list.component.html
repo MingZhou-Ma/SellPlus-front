@@ -16,7 +16,6 @@
                         <th class="text-center c-w-1">序号</th>
                         <th class="text-center c-w-2">微信名</th>
                         <th class="text-center c-w-2">电话号码</th>
-                        <th class="text-center c-w-2">实名</th>
                         <th class="text-center c-w-2">类型</th>
                         <th class="text-center c-w-2">所属销售</th>
                         <th class="text-center c-w-2">所属销售渠道</th>
@@ -26,9 +25,8 @@
                 <tbody>
                     <tr *ngFor="let data of customerlist.content;let i = index">
                     <td class="text-center" style="display:table-cell; vertical-align:middle">{{i+1}}</td>
-                    <td class="text-center" style="display:table-cell; vertical-align:middle">黄信维</td>
+                    <td class="text-center" style="display:table-cell; vertical-align:middle">{{data.nickname}}</td>
                     <td class="text-center" style="display:table-cell; vertical-align:middle">{{data.phone}}</td>
-                    <td class="text-center" style="display:table-cell; vertical-align:middle">{{data.name}}</td>
                     <td class="text-center" style="display:table-cell; vertical-align:middle">{{data.frequenter}}</td>
                     <td class="text-center" style="display:table-cell; vertical-align:middle">{{data.seller.name}}</td>
                     <td class="text-center" style="display:table-cell; vertical-align:middle">{{data.sellerChannel}}</td>

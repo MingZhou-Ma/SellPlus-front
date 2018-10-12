@@ -37,7 +37,7 @@ export class Sharing_SettingComponent {
 
     ) 
   {
-    this.appService.titleEventEmitter.emit("老司机活动管理");
+    this.appService.titleEventEmitter.emit("心得分享管理");
   }
 
   ngOnInit(){
@@ -50,9 +50,9 @@ export class Sharing_SettingComponent {
   setmaininfo(){
     let that = this;
     let formData=new FormData();
-    formData.append("coupon1",that.event.coupon1)
-    formData.append("coupon2",that.event.coupon1)
-    formData.append("promotion",that.event.promotion)
+    formData.append("diaryCoupon",that.event.diaryCoupon)
+    formData.append("diaryReadNum",that.event.diaryReadNum)
+    formData.append("diaryIntervals",that.event.diaryIntervals)
     if(that.event=="null"){
         const toastCfg = new ToastConfig(ToastType.ERROR, '', '请先填写信息', 3000);
         that.toastService.toast(toastCfg);
@@ -69,12 +69,9 @@ export class Sharing_SettingComponent {
 }
 
 
-getCouponChange1(){
-    console.log(this.event.coupon1)
+getCouponChange(){
 }
-getCouponChange2(){
-    console.log(this.event.coupon2)
-}
+
 
 
 getmodellist(){

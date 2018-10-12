@@ -10,6 +10,7 @@ import{GetActInfoService} from '../../service/get-act-info.service'
 import{PublicComponent} from "./help/public/public.component"
 import{SharedModule}from "../../shared/shared.module"
 import {ProductService} from '../../service/product.service'
+import {CouponService} from '../../service/coupon.service'
 
 @NgModule({
   imports: [
@@ -26,6 +27,10 @@ import {ProductService} from '../../service/product.service'
   ],
   exports: [
   ],
-  providers: [GetActInfoService,ProductService]
+  providers: [
+    GetActInfoService,
+    ProductService,
+    CouponService
+  ]
 })
 export class ActModule { }

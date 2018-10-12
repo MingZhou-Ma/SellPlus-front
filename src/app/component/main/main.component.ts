@@ -180,14 +180,6 @@ export class MainComponent implements OnInit {
     {
       "id": "38",
       "parentId": "15",
-      "name": "券核销",
-      "keyWord": "yhlb",
-      "icon": "fa-list-alt",
-      "url": "/home/content_management/coupon_cancle"
-    }, 
-    {
-      "id": "38",
-      "parentId": "15",
       "name": "券核销记录",
       "keyWord": "yhlb",
       "icon": "fa-list-alt",
@@ -275,7 +267,7 @@ export class MainComponent implements OnInit {
    */
   toHome() {
     this.title = "首页";
-    this.router.navigate(['/app/home']);
+    this.router.navigate(['/home']);
   }
 
   /**

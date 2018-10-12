@@ -46,6 +46,7 @@ export class GetActInfoService {
 
     act_public(act_type:string,body:any,result:Function){
         let formData=new FormData();
+        formData.append("couponsId",body.couponsId)
         formData.append("isGroup",act_type)
         formData.append("product.id",body.id)
         formData.append("headline",body.title)

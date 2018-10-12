@@ -37,7 +37,7 @@ export class Driver_SettingComponent {
 
     ) 
   {
-    this.appService.titleEventEmitter.emit("心得分享管理");
+    this.appService.titleEventEmitter.emit("老司机活动管理");
   }
 
   ngOnInit(){
@@ -50,9 +50,8 @@ export class Driver_SettingComponent {
   setmaininfo(){
     let that = this;
     let formData=new FormData();
-    formData.append("diaryReadNum",that.event.diaryReadNum)
-    formData.append("diaryCoupon",that.event.diaryCoupon)
-    formData.append("diaryIntervals",that.event.diaryIntervals)
+    formData.append("freqCouponId",that.event.freqCouponId)
+    formData.append("freqBonus",that.event.freqBonus)
     if(that.event=="null"){
         const toastCfg = new ToastConfig(ToastType.ERROR, '', '请先填写信息', 3000);
         that.toastService.toast(toastCfg);
@@ -69,8 +68,11 @@ export class Driver_SettingComponent {
 }
 
 
-getCouponChange(){
-    console.log(this.event.diaryCoupon)
+getCouponChange1(){
+    console.log(this.event.coupon1)
+}
+getCouponChange2(){
+    console.log(this.event.coupon2)
 }
 
 

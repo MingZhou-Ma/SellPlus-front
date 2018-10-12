@@ -1,28 +1,22 @@
-<div class="card mb-5">
+
+  <div class="card mb-5">
     <div class="card-body">
         <br>
       <div class="form-group row">
-          <label class="col-sm-2 col-form-label">选择奖品券</label>
+          <label class="col-sm-2 col-form-label">老司机用来发给客户的优惠券</label>
           <div class="col-sm-10">
-          <select class="form-control selectpicker show-tick" name="coupon"
-                data-first-option="false" required data-live-search="true" id="coupon" [(ngModel)]="event.diaryCoupon" (change)="getCouponChange()">
+          <select class="form-control selectpicker show-tick" name="coupon1"
+                data-first-option="false" required data-live-search="true" id="coupon1" [(ngModel)]="event.freqCouponId" (change)="getCouponChange1()">
           <option value="-1"></option>
           <option *ngFor="let coupon of modellist.content" [value]="coupon.id">{{coupon.content}}</option>
         </select>
           </div>
       </div>
       <div class="form-group row">
-        <label class="col-sm-2 col-form-label">设置用户分享阅读数量领卷下限</label>
+        <label class="col-sm-2 col-form-label">用户使用该券后老司机所能获得的奖金值</label>
         <div class="col-sm-10">
-          <input type="text" class="form-control"  placeholder="请输入用户分享阅读数量领卷下限"
-            [(ngModel)]="event.diaryReadNum">
-        </div>
-      </div>
-      <div class="form-group row">
-        <label class="col-sm-2 col-form-label">设置获取券时间间隔</label>
-        <div class="col-sm-10">
-          <input type="text" class="form-control"  placeholder="请填写获取券时间间隔,单位：天"
-            [(ngModel)]="event.diaryIntervals">
+          <input type="text" class="form-control"  placeholder="请填写奖金值,单位：元"
+            [(ngModel)]="event.freqBonus">
         </div>
       </div>
       <br>

@@ -5,6 +5,7 @@ import {GetActInfoService} from '../../../../service/get-act-info.service'
 import { ToastService } from '../../../../shared/toast/toast.service';
 import { code } from '../../../../constant/status-code';
 import {ProductService} from '../../../../service/product.service'
+import {CouponService} from '../../../../service/coupon.service'
 
 import { ToastConfig, ToastType } from '../../../../shared/toast/toast-model';
 
@@ -16,15 +17,16 @@ import { ToastConfig, ToastType } from '../../../../shared/toast/toast-model';
 export class PublicComponent {
     event: any = {};
     products:any[]=[];
+    modellist:any=[];
 
     @Output() baseinfoChange = new EventEmitter<any>();
-
+    
   constructor(
       private appService: AppService,
       private getaiservice:GetActInfoService,
       private toastService:ToastService,
       private productservice:ProductService,
-
+      private couponservice:CouponService,
       
     ) 
   {
@@ -36,6 +38,7 @@ export class PublicComponent {
   }
   ngOnInit(){
     this.GetProductList();
+    this.getmodellist();
   }
 
   GetProductList(){
@@ -50,7 +53,9 @@ export class PublicComponent {
       }
     })
     }
-  
+    getCouponChange(){
+
+    }
   onDatepickerChange(fb,timeFlag) {
     if(timeFlag === 0) {
       this.event.starttime = fb;
@@ -75,6 +80,17 @@ public(){
 }
 getProductChange(){
   console.log(this.event.id)
+}
+
+getmodellist(){
+  let that = this;
+  this.couponservice.GetCouponModelList(function(errCode,data){
+      console.log(data)
+      if(errCode==code.success)
+      {
+          that.modellist=data;
+      }
+  })
 }
 
 }
